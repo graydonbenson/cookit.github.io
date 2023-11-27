@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="purchase.css">
+
+</head>
+<body>
+    
+    <div class="main-header">
+        <input type="checkbox" id="menuToggle"> <!-- Input with id="menuToggle" -->
+    <label for="menuToggle" class="menu-toggle-label">&#9776;</label> <!-- Label with class, not id -->
+    <nav class="sidebar">
+        <div class="nav-container">
+            <label for="menuToggle" class="close-button"><span class="close-text">Close</span></label>
+            <a href="#home" class="menu-item home-icon">
+                <span class="icon">&#x1F3E0;</span>
+                <span class="text home-text">Browse Recipes</span>
+            </a>
+            <a href="#shop" class="menu-item shop-icon">
+                <span class="icon">&#x1F6D2;</span>
+                <span class="text shop-text">Shop</span>
+            </a>
+            <a href="#fridge" class="menu-item fridge-icon">
+                <span class="icon">&#x2744;</span>
+                <span class="text fridge-text">Fridge</span>
+            </a>
+            <a href="#profile" class="menu-item profile-icon">
+                <span class="icon">&#x1F464;</span>
+                <span class="text profile-text">Profile</span>
+            </a>
+        </div>
+    </nav>
+        <div class="header-title"><h1>CookIT</h1></div>
+    </div>
+
+    <div class="progress-checkout-container">
+        <div class="progress-step-container">
+            <div class="step-check"></div>
+            <span class="step-title">Shop</span>
+        </div>
+        <div class="progress-step-container">
+            <div class="step-check"></div>
+            <span class="step-title">Checkout</span>
+        </div>
+        <div class="progress-step-container">
+            <div class="step-check"></div>
+            <span class="step-title">Confirm</span>
+        </div>
+    </div>
+
+        <!-- <div class="step-button">Shop</div>
+        <div class="step-button">Checkout</div>
+        <div class="step-button">Confirm</div> -->
+   
+    <div class="main-container">
+        <div class="checkout-form">
+                <select id="store-name">
+                    <option value="" default selected>Select Store Location</option>
+                    <option value="superstore">SuperStore</option>
+                    <option value="ahmed-grocer">Ahmeds Halal Meats</option>
+                    <option value="save-ons">Save On Foods</option>
+                </select>
+        </div>
+           
+            <div class="content">
+                <div id="superstore" class="data">
+                    <span>Shop by category</span>
+                    <input type="text" id="search-bar" class="search-bar" placeholder="Search for an item...">
+                
+                </div>
+                <div id="ahmed-grocer" class="data">
+                    <span>hi2</span>
+                    <h4>ba2</h4>
+                </div>
+                <div id="save-ons" class="data">
+                    <h4>hi3</h4>
+                    <h4>ba3</h4>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

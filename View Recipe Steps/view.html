@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="view.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+    <div class="main-header">
+        <input type="checkbox" id="menuToggle"> <!-- Input with id="menuToggle" -->
+        <label for="menuToggle" class="menu-toggle-label">&#9776;</label> <!-- Label with class, not id -->
+        <nav class="sidebar">
+        <div class="nav-container">
+            <label for="menuToggle" class="close-button"><span class="close-text">Close</span></label>
+            <a href="#home" class="menu-item home-icon">
+                <span class="icon">&#x1F3E0;</span>
+                <span class="text home-text">Browse Recipes</span>
+            </a>
+            <a href="#shop" class="menu-item shop-icon">
+                <span class="icon">&#x1F6D2;</span>
+                <span class="text shop-text">Shop</span>
+            </a>
+            <a href="#fridge" class="menu-item fridge-icon">
+                <span class="icon">&#x2744;</span>
+                <span class="text fridge-text">Fridge</span>
+            </a>
+            <a href="#profile" class="menu-item profile-icon">
+                <span class="icon">&#x1F464;</span>
+                <span class="text profile-text">Profile</span>
+            </a>
+        </div>
+    </nav>
+    <div class="header-title"><h1>CookIT</h1></div>
+    
+    </div>
+    
+    <div class="picture-container">
+        <img class="picture" src="pizza.jpg" alt="pizza"/>
+    </div>
+    <div class="recipe-title-container">
+        <div class="recipe-title"><h1>Quattro Formaggi Pizza</h1></div>
+    </div>
+    <div class="cooking-time">Cooking Time: 5h 55min</div>
+    <div class="recipe-rating-container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"> (25.4K)</span>
+    </div>
+    <div class="recipe-container">
+        <div class="ingredients-container">
+            <h2>Ingredients</h2>
+            <p> • 300g (10.6 oz) 0 flour (or Manitoba, or all-purpose flour)</p>
+            <p> • 170 ml (3/4 cup - 1 tsp) warm water</p>
+            <p> • 3g (0.1 oz) dry baker's yeast (or 9g/0.3 oz fresh yeast)</p>
+            <p> • 1 tsp barley malt or honey</p>
+            <p> • 4 tbsp olive oil</p>
+            <p> • 7g (0.25 oz) fine salt</p>
+            <p> • 50g (1.8 oz) mozzarella, chopped</p>
+            <p> • 50g (1.8 oz) Gorgonzola, chopped</p>
+            <p> • 50g (1.8 oz) Fontina, coarsley grated</p>
+            <p> • 50g (1.8 oz) Grana Padano or Parmiggiano-Reggiano, grated</p>
+            <p> • black pepper, to taste</p>
+
+        </div>
+
+        <div class="recipe-steps-container">
+            <h2>Steps</h2>
+            <label class="container">Add the flour and the dry baker's yeast to a large bowl — mix them together so they brewer's yeast is evenly dispersed in the flour.
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+            
+            <label class="container">Meanwhile, dissolve the malt in warm water, add it to the bowl with the flour, together with olive oil and salt.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            
+            <label class="container">Knead by hand until you get a smooth dough.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            
+            <label class="container">Place the dough in a greased bowl, then cover it with cling film and store it in a warm spot for 3-4 hours, or until tripled in volume.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Once risen, divide the dough in half, shape each half in a ball, roll them out into discs on a floured surface, then place each in a non-stick tray and let them rise for another hour.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Once an hour has passed, sprinkle the pizza base with the four cheeses and black pepper.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Bake in a 250°C/480°F oven, with the grill option turned on, for 15 minutes, until the pizza's edges are golden and its bottom dry.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Once baked, serve immediately.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    <button class="button button1" onClick="myalert()">Complete Recipe!</button>
+    <div class="modal">
+    <div class="modal-content">
+        <span class="close-button1">&times;</span>
+        <h1 align="center">Write a review</h1>
+        <div class="rating-box">
+            <header>Tell us what you think of this recipe!</header>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <label for="freeform">Type your review below:</label>
+            <br>
+            <textarea id="freeform" name="freeform" rows="4" cols="30"></textarea>
+          </div>
+          <a href="/Fridge/fridge.html">
+          <button class="button button2" onclick="document.getElementById('freeform').value = ''">Leave Review</button>
+          </a>
+          <a href="/Fridge/fridge.html">
+            <button class="button button3" onclick="document.getElementById('freeform').value = ''" >Skip</button>
+          </a>
+    </div>
+</div>
+<script src="view.js"></script>
+</body>
+</html>

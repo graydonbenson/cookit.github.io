@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CookIt</title>
+    <link rel="stylesheet" href="browse2.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="title">CookIt</h1>
+            <div class="search-container">
+                <input type="text" id="search" name="search" placeholder="Search recipes...">
+                <button type="submit">Search</button>
+            </div>
+            <div class="filter-buttons">
+                <button class="time-filter" onclick="openPopup()">Time</button>
+                <button class="type-filter">Type</button>
+                <button class="ingredients-filter">Ingredients</button>
+            </div>
+        </div>
+        <div class="popup" id="myPopup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <ul>
+                    <button class="time-options">< 5 minutes</button>
+                    <button class="time-options">< 10 minutes</button>
+                    <button class="time-options">< 15 minutes</button>
+                    <button class="time-options">< 20 minutes</button>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="text-block text-block--text-only">
+            <div class="text-block__container">
+                <div class="bg-img"></div>
+                <div class="text-block__content">
+                    <h2 class="text-block__headline">About CookIT</h2>
+                    <div class="text-block__description">
+                        <p>CookIT is a powerful cooking application browsing page that allows users to easily search for their favorite recipes, filter recipes based on various criteria, and discover new and exciting dishes. Whether you're a seasoned chef or just starting out in the kitchen, CookIT is your go-to resource for bringing mouthwatering recipes to life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-container">
+            <!-- Sample Recipe -->
+            <div class="recipe">
+                <img src="./img/fp-fp-2149056043.jpg" alt="Recipe Image">
+                <div class="recipe-details">
+                    <h2>Chicken Parm</h2>
+                    <p>Time: 20 minutes</p>
+                    <div class="rating">
+                        <div class="stars1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe">
+                <img src="./img/loaded-burgers-featured.jpg" alt="Recipe Image">
+                <div class="recipe-details">
+                    <h2>Cheeseburger</h2>
+                    <p>Time: 15 minutes</p>
+                    <div class="rating">
+                        <div class="stars2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe">
+                <img src="./img/FINAL-lobster-ravioli-1-1200x1800.jpg" alt="Recipe Image">
+                <div class="recipe-details">
+                    <h2>Lobster Ravioli</h2>
+                    <p>Time: 15 minutes</p>
+                    <div class="rating">
+                        <div class="stars3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe">
+                <img src="./img/FINAL-lobster-ravioli-1-1200x1800.jpg" alt="Recipe Image">
+                <div class="recipe-details">
+                    <h2>Lobster Ravioli</h2>
+                    <p>Time: 15 minutes</p>
+                    <div class="rating">
+                        <div class="stars3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe">
+                <img src="./img/FINAL-lobster-ravioli-1-1200x1800.jpg" alt="Recipe Image">
+                <div class="recipe-details">
+                    <h2>Lobster Ravioli</h2>
+                    <p>Time: 15 minutes</p>
+                    <div class="rating">
+                        <div class="stars3"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional Recipes... -->
+        </div>
+    </main>
+</body>
+<script src="browse.js"></script>
+</html>

@@ -1,0 +1,224 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="purch-part2.css">
+            <script src="purch-part2.js"></script>
+            <!-- google icons -->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+        </head>
+
+        <body>
+
+            <header>
+                <div class="header">
+            
+                    <div class="top-header">
+                        <a href="#" class="title"><i class="fa-solid fa-wheat-awn"></i>CookIT</a>
+                    <div class="upper-dash">
+                        <!-- <span class="dash-item checkout-cart">Check Cart</span> -->
+                        <span class="dash-item material-symbols-outlined" id="open-cart">shopping_cart</span>
+                    </div>
+                    </div>
+                    <div class="navbar">
+                        <nav class="navigate-page">
+                            <!-- <h1>Hello</h1>  -->
+                            <div class="prev-bought">
+                                <i class="fa-solid fa-rotate">&#x21BB;</i>
+                                <span>Previously Bought Items</span>
+                                <a href="#previous" class="previous-btn"></a>
+                            </div>
+                        </nav>
+                    </div>
+                
+                    <section class="cart closed">
+                        <h2 class="cart-title">Cart</h2>
+                        <span class="close" id="close-cart">X</span>
+                        <div class="cart-content">
+                           
+                            <!-- javascript functions -->
+                        </div>
+
+                        <div class="user-info-form" style="display: none;">
+                            <h6>< Back to Cart</h6>
+                            <span></span>
+                            <h2>Checkout</h2>
+                            <form>
+
+                                <label for="pickupDropoff">Select Delivery Method:</label>
+                                <div class="delivery-method">
+                                    <button class="delivery-option" id="pickupButton">Pick Up</button>
+                                    <button class="delivery-option" id="dropoffButton">Drop Off</button>
+                                </div>
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+
+                                <label for="city">City:</label>
+                                <input type="text" id="city" name="city" required value="Calgary">
+
+                                <label for="address">Address:</label>
+                                <input type="text" id="address" name="address" required>
+
+                                <label for="postalCode">Postal Code:</label>
+                                <input type="text" id="postalCode" name="postalCode" required>
+
+                                <label for="date">Preferred Date:</label>
+                                <input type="date" id="date" name="date" required>
+                                
+                                <label for="time">Preferred Time:</label>
+                                <input type="time" id="time" name="time" required>
+
+                            </form>
+                        </div>
+
+
+                        <!-- <div class="order-confirmation" style="display: none">
+                            <div class="confirmation-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>Thank you!</h4>
+                            <p>Your order is on the way!</p>
+                        </div>
+
+ -->
+
+
+                        <div class="total">
+                            <div class="total-title">Total</div>
+                            <div class="total-price">$10</div>
+                        </div>
+
+                        <button id="btn-buy" type="button">Checkout</button>
+                        
+
+                    </section>
+        
+                    
+
+                </div>
+
+
+
+            </header>
+
+            <!-- home section container -->
+            <div class="main-container">
+                <div class="search-store">
+                    <div class="search-store__container">
+                        <h1>Select Store</h1>
+                        <div class="checkout-form">
+                            <select id="store-name">
+                                <option value="" default selected>Select Store Location</option>
+                                <option value="superstore">SuperStore</option>
+                                <option value="ahmed-grocer">Ahmeds Halal Meats</option>
+                                <option value="save-ons">Save On Foods</option>
+                            </select>
+                    </div>
+                <div class="button-container"><button id="choose-store">Enter</button></div>
+                    
+                    </div>
+
+                </div>
+                <section class="home-section" id="home">
+                    <!-- <div class="background">
+                        <img src="grocery-bag.jpg" alt="">
+                    </div> -->
+                    <div class="box-content">
+                        <h1>Fridge low on stock?</h1>
+                        <h5>Get groceries today to start making delicious recipes!</h5>
+                        <a href="#category" class="discover-btn">Browse Categories</a>
+                    </div>
+                </section>
+            </div>
+
+              <!-- section for search bar display -->
+
+              <section class="search-for-item-section" id="itemSearch">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search for items...">
+                </div>
+                <div class="search-results">
+                    <ul id="resultsList"></ul>
+                </div>
+            </section>
+
+
+            <!-- browse by categories section -->
+            <section class="category-section" id="category">
+                <div class="category-head">
+                    <div class="category-title">
+                        <p>Browse by Category</p>
+                        <div class="show-all-items">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-body product-category-container">
+                    <!-- using datalist -->
+                    
+                   
+                </div>
+
+            </section>
+
+
+
+
+          
+
+
+
+            <!-- display of purcheses to buy section  -->
+
+            <section class="mechandise-section" id="merchandise">
+                <div class="merchandise-container">
+                    <div class="category-head">
+                        <div class="category-title">
+                            <p></p>
+                            <div class="show-all-items">
+                                <!-- <p>all product</p> -->
+                                <p></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="merchandise-content">
+                        <div class="identity-product">
+                            <div class="identity-title">Bakery Goods</div>
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <!-- using datalist  -->
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- display Previously bought items here  -->
+
+            <section class="prev-section" id="previous">
+                <div class="prev-container">
+                    <div class="category-head">
+                        <div class="category-title">
+                            <p></p>
+                            <div class="show-all-items">
+                                <!-- <p>all product</p> -->
+                                <p></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="previous-content">
+                        <div class="identity-product">
+                            <div class="identity-title">Purchase Again</div>
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <!-- using datalist  -->
+
+                    </div>
+                </div>
+            </section>
+
+
+        </body>
+    </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookIT | My Fridge</title>
+    <link rel="stylesheet" href="fridge.css">
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#browse">Browse</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#fridge">Fridge</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+            <h1 class="logo">CookIT</h1>
+    <div id="app">
+      <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#browse">Browse</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#fridge">Fridge</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+            <h1 class="logo">CookIT</h1>
+        </div>
+      </nav>
+
+       <!-- FRIDGE -->
+       <div class="rectangle-container">
+        <div class="rectangle rectangle-6"></div>
+        <div class="rectangle rectangle-7"></div>
+        <div class="rectangle rectangle-8"></div>
+        <div class="rectangle rectangle-9"></div>
+        <div class="rectangle rectangle-10"></div>
+      </nav>
+
+
+      <!-- BUTTON -->
+      <div class="ButtonContainer">
+        <button class="ItemButton">Add Items</button>
+        <button class="ItemButton" id="editButton">Edit Items</button>
+      </div>
+      
+      <div class="itemsContainer">
+        <div class="item" id="item1">
+          <img src="https://images.unsplash.com/photo-1571680322279-a226e6a4cc2a?auto=format&fit=crop&q=80&w=1786&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <label class="label">Tomato</label>
+          <button class="decrease">-</button>
+          <input class="InputField" type="number" value="1" min="0" readonly>
+          <button class="increase">+</button>
+        </div>
+      
+        <div class="item" id="item2">
+          <img src="https://images.unsplash.com/photo-1585849834908-3481231155e8?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+          <label class="label">Shallot</label>
+          <button class="decrease">-</button>
+          <input class="InputField" type="number" value="1" min="0" readonly>
+          <button class="increase">+</button>
+        </div>
+    
+        <div class="item" id="item3">
+          <img src="https://images.unsplash.com/photo-1630623093145-f606591c2546?auto=format&fit=crop&q=80&w=1965&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+          <label class="label">Ginger</label>
+          <button class="decrease">-</button>
+          <input class="InputField" type="number" value="1" min="0" readonly>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let isEditing = false;
+
+      // Get a reference to the button by its ID
+      const editButton = document.getElementById("editButton");
+      const decreaseButton = document.querySelectorAll('.decrease');
+      const increaseButton = document.querySelectorAll('.increase');
+
+      // Add a click event listener to the button
+      editButton.addEventListener("click", function() {
+        isEditing = !isEditing;
+
+        if(isEditing){
+          for (let i = 0; i < decreaseButton.length && i<increaseButton.length; i++) {
+            decreaseButton[i].style.display = "inline";
+            increaseButton[i].style.display = "inline";
+          }
+        } else{
+          for (let i = 0; i < decreaseButton.length && i<increaseButton.length; i++) {
+            decreaseButton[i].style.display = "none";
+            increaseButton[i].style.display = "none";
+          }
+        }
+
+      });
+    </script>
+  </body>
+</html>
+
+
