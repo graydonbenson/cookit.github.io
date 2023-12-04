@@ -174,6 +174,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 600px;
+    object-fit: cover;
 }
 
 .picture {
@@ -205,7 +206,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     padding: 10px;
-    background-color: burlywood;
+    background-color: antiquewhite;
   }
   
   .ingredients-container {
@@ -236,7 +237,12 @@ body {
 .cooking-time {
     height: 20px;
     padding-left: 10px;
-    padding-bottom: 10px;
+}
+
+.nutritional-value {
+  height: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 .ingredients-container {
@@ -361,6 +367,18 @@ body {
     color: white;
   }
   
+  .button4 {
+    background-color: #faf8f6;
+    color: black;
+    border: 2px solid #ff9c1a;
+    margin: 0 auto;
+  }
+
+  .button4:hover {
+    background-color: #ff9c1a;
+    color: white;
+  }
+
   .modal {
     position: fixed;
     left: 0;
@@ -434,6 +452,7 @@ body {
   .stars i.active {
     color: #ff9c1a;
   }
+
 
 /* Media query to make the sidebar disappear on small screens */
 @media (max-width: 700px) {

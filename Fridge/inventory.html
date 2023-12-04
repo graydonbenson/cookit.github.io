@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CookIT | My Inventory</title>
+  <link rel="stylesheet" href="inventoryStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <header>
+    <div>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+        <a href="../browse Recipes/browse.html">Browse Recipes</a>
+        <a href="../Purchase ingredients/purch-part2.html">Shop</a>
+        <a href="../Login-Register-Profile/Profile.html">Profile</a>
+      </div>
+      <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
+    </div>
+    <h1 onclick="document.location='../browse Recipes/browse2.html'">CookIT</h1>
+  </header>
+</head>
+
+<body>
+  <div class="app idk">
+    <div class="fridgeContainer idk">
+      <div class="fridge1 idk">
+        <div class="fridge2 idk">
+          <div class="itemsContainer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttonContainer">
+      <div class="button">
+        <span onclick="document.location='addToInv.html'" style="cursor:pointer">&#x2b;</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let navOpen = false;
+    let fridgenavOpen = false;
+    // const inventory = [
+    //     { name: "Apple", image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGV8ZW58MHx8MHx8fDI%3D", quantity: 10 },
+    //     { name: "Banana", image: "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuYW5hfGVufDB8fDB8fHwy", quantity: 5},
+    // ];
+    const inventory = [];
+
+    function toggleNav(sidenavId) {
+      const isOpen = navOpen;
+      const width = isOpen ? "0" : "300px";
+      navOpen = !navOpen;
+      document.getElementById(sidenavId).style.width = width;
+    }
+    // load inventory from session storage (shoppingcart or inventory)
+    function loadInventory(listName) {
+      const shoppingCartString = sessionStorage.getItem(listName);
+
+      // if it exists
+      if (shoppingCartString) {
+        // get the array
+        const shoppingCart = JSON.parse(shoppingCartString);
+        shoppingCart.forEach(cartItem => {
+          // Check if the item name exists in the inventory
+          const inventoryItem = inventory.find(invItem => invItem.name === cartItem.name);
+
+          if (inventoryItem) {
+            //update quantity if same name
+            inventoryItem.quantity += cartItem.quantity;
+          } else {
+            // append to inventory if no same name
+            inventory.push({
+              name: cartItem.name,
+              image: cartItem.image,
+              quantity: cartItem.quantity
+            });
+          }
+        });
+      }
+    }
+
+    // to save to session storage (bit buggy idk how to fix :] )
+    function updateInventoryAndSave(inventory) {
+      sessionStorage.setItem('inventory', JSON.stringify(inventory));
+    }
+
+    function displayInventory() {
+      const inventoryContainer = document.querySelector('.itemsContainer');
+
+      // clear existing content in the container
+      inventoryContainer.innerHTML = '';
+
+      inventory.forEach(item => {
+        // main container
+        const itemContainer = document.createElement('div');
+        itemContainer.className = 'itemContainer';
+
+        // image
+        const imgElement = document.createElement('img');
+        imgElement.src = item.image;
+        itemContainer.appendChild(imgElement);
+
+        // text
+        const h2Element = document.createElement('h2');
+        h2Element.textContent = item.name;
+        itemContainer.appendChild(h2Element);
+
+        // for quantity
+        const controlsContainer = document.createElement('div');
+        controlsContainer.className = 'controls';
+
+        // dec button
+        const decButton = document.createElement('div');
+        decButton.className = 'incDecButton dec';
+        decButton.textContent = '-';
+        // dec event
+        decButton.addEventListener('click', function () {
+          item.quantity = Math.max(0, item.quantity - 1);
+          if (item.quantity == 0) {
+            inventory.splice(inventory.indexOf(item), 1);
+            displayInventory(); // update displayed items after removing item 
+            updateInventoryAndSave(inventory)
+          }
+          inputElement.value = item.quantity;
+          updateInventoryAndSave(inventory);
+        });
+
+        controlsContainer.appendChild(decButton);
+
+        // quantity text
+        const inputElement = document.createElement('input');
+        inputElement.type = 'number';
+        inputElement.value = item.quantity;
+        inputElement.min = 0;
+        inputElement.readOnly = true;
+        controlsContainer.appendChild(inputElement);
+
+        // inc button
+        const incButton = document.createElement('div');
+        incButton.className = 'incDecButton inc';
+        incButton.textContent = '+';
+        // inc event
+        incButton.addEventListener('click', function () {
+          item.quantity++;
+          inputElement.value = item.quantity;
+          updateInventoryAndSave(inventory);
+        });
+        controlsContainer.appendChild(incButton);
+
+        itemContainer.appendChild(controlsContainer);
+
+        // toggle buttons visibility
+        itemContainer.addEventListener('click', function () {
+          // only toggle if we hit anything outside the buttons
+          if (!event.target.classList.contains('incDecButton')) {
+            decButton.style.visibility = decButton.style.visibility === 'visible' ? 'hidden' : 'visible';
+            incButton.style.visibility = incButton.style.visibility === 'visible' ? 'hidden' : 'visible';
+          }
+        });
+
+        inventoryContainer.appendChild(itemContainer);
+      });
+    }
+    
+    window.onload = function () {
+      sessionStorage.removeItem('shoppingCart');
+      updateInventoryAndSave(inventory)
+    };
+
+    loadInventory('inventory')
+    loadInventory('shoppingCart');
+    displayInventory();
+
+
+  </script>
+</body>
+
+</html>

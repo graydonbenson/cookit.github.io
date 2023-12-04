@@ -1,3 +1,16 @@
+body {
+  margin: 0;
+}
+
+.u-body {
+  background-color: antiquewhite; /* Replace with your desired color code */
+}
+
+.u-container-layout {
+  background-color: rgb(253, 247, 238); /* Replace with your desired color code */
+
+}
+
 .u-section-1 .u-sheet-1 {
   min-height: 552px;
 }
@@ -145,5 +158,65 @@
 
   .u-section-1 .u-table-2 {
     margin-top: 110px;
+  }
+}
+
+footer {
+  background-color: burlywood;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+  Verdana, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #444;
+}
+
+.footer-content .footer-section {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-content h3 {
+  margin-top: 0;
+  
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li a {
+  color: white;
+  text-decoration: none;
+  
+}
+
+.footer-content ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  padding-top: 20px;
+}
+.contact {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content .footer-section {
+    margin-bottom: 20px;
   }
 }

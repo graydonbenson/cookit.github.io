@@ -9,6 +9,14 @@ body {
   color: black;
 }
 
+a {
+  color: white;
+}
+
+a:visited{
+  color: white;
+}
+
 :root {
   --bar-width: 60px;
   --bar-height: 8px;
@@ -18,6 +26,10 @@ body {
   --hamburger-margin: 8px;
   --animation-timing: 200ms ease-in-out;
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.closebtn{
+  position: absolute;
 }
 
 .hamburger-menu {
@@ -102,8 +114,6 @@ body {
 .hamburger-menu:has(input:checked) + .sidebar {
   translate: 0;
 }
-
-
 
 .container {
   top:0%;
@@ -190,11 +200,9 @@ main {
 }
 
 .recipe-container {
-  position: absolute;
-  top:65%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Aligns recipes in the center */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Aligns recipes in the center */
     
 }
 
@@ -310,12 +318,12 @@ li {
 
 .text-block{
   font-size: 22px;
-  position: absolute;
-  top:45%;
-    background-color: rgba(243, 243, 243, 0.3);
-    text-align: center;
-    margin: 0% 20% 0% 20%;
-    border-radius: 8px;
+  background-color: rgba(243, 243, 243, 0.3);
+  text-align: center;
+  margin: 0% 20% 0% 20%;
+  border-radius: 8px;
+  padding-bottom: 1%;
+  padding-top: 1%;
   }
 
   *,
@@ -326,7 +334,7 @@ li {
 
 body {
   margin: 0;
-  background-color: #eedbbd; /* Lighter tan for background */
+  background-color: antiquewhite; /* Lighter tan for background */
   color: #222; /* Darker text color */
 }
 
@@ -389,7 +397,7 @@ button[type="submit"]:hover {
 }
 
 .text-block {
-  background-color: rgba(243, 243, 243, 0.6); /* Slightly lighter background */
+  background-color: rgba(250, 153, 153, 0.523); /* Slightly lighter background */
 }
 
 /* Additional Changes */
@@ -409,18 +417,6 @@ button[type="submit"]:hover {
   color: #d2b48c; /* Used the custom tan color for title text */
 }
 
-.pfp{
-  position: fixed; /* Ensures the image remains fixed even when scrolling */
-  top: 20px; /* Adjust the top position as needed */
-  right: 20px; /* Adjust the right position as needed */
-  z-index: 99; /* Set a z-index to ensure the image stays on top of other content */
-  /* Additional styling */
-}
-
-.pfp img{
-  width: 50px; /* Adjust the width of the image */
-  height: auto; /* Maintain aspect ratio */
-}
 
 .recipe-sidebar {
   position: fixed;
@@ -436,4 +432,11 @@ button[type="submit"]:hover {
 
 .recipe-sidebar.active {
   right: 0; /* Show the sidebar by bringing it to the viewport */
+}
+
+.text-sub{
+  margin-left:4.5%;
+  margin-bottom: -3%;
+  text-align: left;
+  font-size: 20px;
 }

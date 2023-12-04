@@ -2,6 +2,10 @@
   min-height: 349px;
 }
 
+.u-body {
+  background-color: antiquewhite; /* Replace with your desired color code */
+}
+
 .u-section-1 .u-sheet-1 {
   min-height: 520px;
 }
@@ -14,7 +18,7 @@
 
 .u-section-1 .u-image-1 {
   min-height: 400px;
-  background-image: url("images/young-bearded-man-with-striped-shirt.jpg");
+  background-image: url("images/kitchen.jpg");
 }
 
 .u-section-1 .u-container-layout-1 {

@@ -1,0 +1,209 @@
+body{
+    margin:0;
+    font-family: "Lato", sans-serif;
+    overflow: hidden;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: wheat;
+    padding: 10px;
+  }
+  
+  header h1 {
+    margin: 0px auto;
+    cursor: pointer;
+  }
+  
+  /* SIDE BAR */
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: wheat;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: rgb(219, 144, 6);
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(235, 235, 235);
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(187, 153, 110);
+    border-radius: 5px;
+  }
+
+.app {
+    height: 100vh;
+    gap: 50px;
+}
+
+
+.idk{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fridgeContainer{
+    background-color: #a0a0a0;
+    border-radius: 15px;
+    width: 73vw;
+    height: 80vh;
+}
+
+.fridge1{
+    background-color: rgb(249, 249, 249);
+    width: 97%;
+    height: 95%;
+    border-radius:inherit;
+}
+
+.fridge2{
+    background-color: #D9D9D9;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.itemsContainer{
+    display: flex;
+    width: 97%;
+    height: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+.itemContainer{
+    position: relative;
+    margin: 20px;
+    width: 200px;
+    height: 210px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.itemContainer:hover{
+    border: 5px burlywood solid;
+}
+
+.itemContainer h2{
+    background-color: burlywood;
+    padding: 2px 10px 2px 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.itemContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.controls{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.controls input{
+    text-align: center;
+    width: 35px;
+    height: 25px;
+    font-size: 20px;
+    color: white;
+    background: #8e785a;
+    border: none;
+    cursor: default;
+}
+
+.incDecButton{
+    color: white;
+    width: 30px;
+    font-size: 20px;
+    visibility: hidden;
+}
+
+.incDecButton:hover{
+    cursor: pointer;
+}
+
+.dec{
+    border-radius: 5px 0 0 5px;
+    background-color: red;
+}
+
+.inc{
+    border-radius: 0 5px 5px 0;
+    background-color: green;
+}
+
+.buttonContainer{
+    height: 100%;
+}
+
+.button{
+    position: absolute;
+    bottom:40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    background-color: burlywood;
+    width: 100px;
+    height: 100px;
+    color: white;
+    font-weight: 700;
+}

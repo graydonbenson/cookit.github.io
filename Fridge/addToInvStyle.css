@@ -1,0 +1,351 @@
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: wheat;
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+    cursor: pointer;
+}
+
+header img {
+    width: 30px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(235, 235, 235);
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(187, 153, 110);
+    border-radius: 5px;
+  }
+  
+
+/* SIDE BAR */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: wheat;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: rgb(219, 144, 6);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+/* END OF SIDE BAR */
+
+
+/* FRIDGE SIDE BAR */
+
+.fridgeSidenav{
+    left: unset;
+    right: 0;
+}
+
+.fridgeSidenav-container{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fridgeSidenav-container h2{
+    margin:0;
+    padding-bottom: 10px;
+    border-bottom: 1px black solid;
+}
+
+.fridgeSidenav-container button{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+    position: absolute;
+    bottom: 100px;
+    width: 90%;
+    display: flex;
+    border: none;
+    border-radius: 10px;
+    background: burlywood;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.fridgeSidenav-container button:hover{
+    background: rgb(131, 98, 54);
+    color: white;
+}
+
+.fridgeSidenav-itemsContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top:10px;
+    width: 95%;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+.fridgeSidenav-item{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px black solid;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.fridgeSidenav-imageContainer{
+    width: 70px;
+    height: 70px;
+}
+
+.fridgeSidenav-imageContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.fridgeSidenav-textContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.fridgeSidenav-textContainer p{
+    margin:0;
+}
+
+.fridgeSidenav-incDec{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.fridgeSidenav-incDec input{
+    text-align: center;
+    width: 30px;
+    height: 20px;
+    color: white;
+    background: #8e785a;
+    border: none;
+}
+
+/* END OF FRIDGE SIDE BAR */
+
+.incDecButton{
+    color: white;
+    width: 30px;
+}
+
+.incDecButton:hover{
+    cursor: pointer;
+}
+
+.dec{
+    border-radius: 5px 0 0 5px;
+    background-color: red;
+}
+
+.inc{
+    border-radius: 0 5px 5px 0;
+    background-color: green;
+}
+
+.removeButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color:white;
+    height:70px;
+    width: 70px;
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+}
+
+.search {
+    padding: 10px;
+}
+
+.app .search-container {
+    border: 1px grey solid;
+    border-radius: 10px;
+}
+
+.app input[type=text] {
+    width: 95%;
+    padding: 10px;
+    position: relative;
+    left: 20px;
+    border: none;
+    font-size: 17px;
+
+}
+
+.app .search-container button {
+    float: right;
+    padding: 10px;
+    background: #ddd;
+    border-radius: 0 10px 10px 0;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.browseContainer {
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 125px;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.itemFilter {
+    border: 1px #a47942 solid;
+    background-color: wheat;
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.itemFilter:hover {
+    background-color: #a47942;
+    color: white;
+}
+
+.categoriesContainer{
+    padding: 0 10px 0 10px;
+}
+
+.category {
+    background-color: #b19e91;
+    border-radius: 10px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.categoryName {
+    background-color: #dcdcdc;
+    width: 200px;
+    height: 300px;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.categoryName p {
+    text-align: center;
+    transform: rotate(-90deg);
+    color: #645f56;
+    position: relative;
+    left: 90px;
+    font-size: 50px;
+    margin: 0;
+}
+
+.itemsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 1230px;
+    height: 270px;
+    overflow-x: scroll;
+}
+
+.item {
+    flex-shrink: 0;
+    width: 200px;
+    height: 250px;
+    background-color: burlywood;
+    border-radius: 10px;
+}
+
+.imageContainer {
+    width: 100%;
+    height: 65%;
+}
+
+.imageContainer img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textContainer button {
+    padding: 5px 30px 5px 30px;
+    border-radius: 10px;
+    border: 1px #a47942 solid;
+    background-color: wheat;
+    cursor: pointer;
+}
+
+.textContainer button:hover{
+    background-color: #a47942;
+    color: white;
+}

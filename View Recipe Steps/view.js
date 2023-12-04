@@ -2,8 +2,14 @@ const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".button1");
 const closeButton = document.querySelector(".close-button1");
 
-function toggleModal() {
-    modal.classList.toggle("show-modal");
+function toggleModal(modalId) {
+  const modal = document.getElementById(`modal${modalId}`);
+  modal.classList.toggle("show-modal");
+}
+
+function closePopup(){
+  console.log("hidden")
+  modal1.style.display = "hidden"
 }
 
 function windowOnClick(event) {
@@ -11,6 +17,7 @@ function windowOnClick(event) {
         toggleModal();
     }
 }
+
 
 trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
@@ -32,6 +39,4 @@ window.addEventListener("click", windowOnClick);
    });
  });
 
- function myalert() { 
-  alert("The quantities of your ingredients have been successfully updated following the completion of this recipe!"); 
-} 
+
