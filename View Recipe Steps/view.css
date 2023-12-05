@@ -1,242 +1,155 @@
 /* Normalize the styles for better cross-browser consistency */
 body {
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-    background-color: antiquewhite;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+  font-family: "Lato", sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
+span{
+  font-size: 2rem;
+  /* position: relative; */
+  top: 15px;
+  right: 15px;
+}
 
 .step-container {
-    background-color: aquamarine;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding:20px;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 20px;
 }
 
 .main-container {
-    background-color: burlywood;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 10px;
+  background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
 }
 
 
-/* Styles for the main header */
-.main-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:tan;
-    color:#f2ece3;
+header {
+  display: flex;
+  align-items: center;
+  background-color: wheat;
+  padding: 10px;
 }
 
-/* Styles for the menu toggle label/button */
-.menu-toggle-label {
-    border: none;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 25px;
-    cursor: pointer;
-    position: absolute;
-    left: 0;
-    top: 5;
+header h1 {
+  margin: 0px auto;
+  cursor: pointer;
 }
 
-/* Styles for the sidebar menu items */
-.menu-item {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    text-decoration: none;
-    color: black;
+/* SIDE BAR */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: wheat;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
-/* Styles for the icons */
-.menu-item .icon {
-    font-size: 30px;
-    margin-right: 10px;
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
 }
 
-/* Styles for the text */
-.menu-item .text {
-    font-size: 20px;
-    display: inline-block;
-    vertical-align: middle; /* Adjust the vertical alignment */
+.sidenav a:hover {
+  color: rgb(219, 144, 6);
 }
 
-/* Adjust the font size of the word "Close" */
-.close-text {
-    font-size: 20px; /* Adjust the font size for the word "Close" */
-    display: inline-block;
-    vertical-align: middle; /* Adjust the vertical alignment */
-}
-
-.home-text {
-    font-size: 20px;
-    display: inline-block;
-    vertical-align: middle; /* Adjust the vertical alignment */
-}
-
-.shop-text {
-    font-size: 20px;
-    display: inline-block;
-    vertical-align: middle; /* Adjust the vertical alignment */
-}
-
-.fridge-text {
-    font-size: 20px;
-    display: inline-block;
-    vertical-align: middle; /* Adjust the vertical alignment */
-}
-
-.profile-text { 
-    font-size: 20px;
-    display: inline-block;
-    vertical-align: middle; /* Adjust the vertical alignment */
-}
-
-/* Style the "X" icon */
-.close-button::before {
-    content: '\2716'; /* Unicode for the "X" icon */
-    margin-right: 10px; /* Add some spacing to the right of the icon */
-    font-size: 20px; /* Adjust the size of the icon */
-}
-
-/* Styles for the menu toggle */
-#menuToggle {
-    display: none;
-}
-
-/* Styles for the menu toggle when checked (used to show/hide the sidebar) */
-#menuToggle:checked + label + .sidebar {
-    left: 0;
-}
-
-
-
-/* Styles for the sidebar */
-.sidebar {
-    position: absolute;
-    top: 0;
-    left: -16rem;
-    z-index: 4;
-    height: 100vh;
-    padding: 20px;
-    background-color:#decaaf;
-    transition: left 0.3s ease; /* Add a smooth transition for the "left" property */
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack child elements vertically */
-    justify-content: space-between; /* Distribute space between child elements */
-
-}
-
-.nav-container{
-    flex: 1;
-    position: relative;
-}
-
-.menu-item.profile-icon{
-    position: absolute;
-    bottom: 0;
-    left:0;
-}
-
-
-/* Styles for sidebar links */
-.sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-}
-
-.close-button {
-    background-color: #d3b792;
-    border: none;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 .picture-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
-    object-fit: cover;
+  width: 100vw;
+  height: 300px;
 }
 
 .picture {
-    height: 100%;
-    width: 100%;
+  width: 100vw;
+  height: 50vmin;
+  object-fit: cover;
+  object-position: center;
 }
 
 
 .checked {
-    color: orange;
+  color: orange;
 }
 
 .recipe-title-container {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    height: 50px;
-    padding-left: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 50px;
+  padding-left: 10px;
 }
 
 .recipe-rating-container {
-    display: flex;
-    padding-left: 10px;
-    padding-bottom: 20px;
+  display: flex;
+  padding-left: 10px;
+  padding-bottom: 20px;
 }
 
 .recipe-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 10px;
-    background-color: antiquewhite;
-  }
-  
-  .ingredients-container {
-    flex: 1;
-  }
-  
-  .recipe-steps-container {
-    flex: 1;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: antiquewhite;
+}
+
+.ingredients-container {
+  flex: 1;
+}
+
+.recipe-steps-container {
+  flex: 1;
+}
 
 /* Styles for content when the sidebar is visible */
 .content {
-    background-color: floralwhite;
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
-    position: relative;
+  background-color: floralwhite;
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+  position: relative;
 }
 
 .ingredients-container p {
-    font-size: medium;
+  font-size: medium;
 }
 
 .recipe-steps-container label {
-    font-size: medium;
+  font-size: medium;
 }
 
 .cooking-time {
-    height: 20px;
-    padding-left: 10px;
+  height: 20px;
+  padding-left: 10px;
 }
 
 .nutritional-value {
@@ -246,230 +159,271 @@ body {
 }
 
 .ingredients-container {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 .recipe-steps-container {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #faf8f6;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-  .button {
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    float: right;
-    margin-right: 50px;
-  }
-  
-  .button1 {
-    background-color: #faf8f6;
-    color: black;
-    border: 2px solid #4CAF50;
-  }
-  
-  .button1:hover {
-    background-color: #4CAF50;
-    color: white;
-  }
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 
-  .button2 {
-    background-color: #faf8f6;
-    color: black;
-    border: 2px solid #ff9c1a;
-  }
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #faf8f6;
+}
 
-  .button2:hover {
-    background-color: #ff9c1a;
-    color: white;
-  }
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+  background-color: #ccc;
+}
 
-  .button3 {
-    border: 2px solid gray;
-    color: black;
-  }
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+  background-color: #2196F3;
+}
 
-  .button3:hover {
-    background-color: gray;
-    color: white;
-  }
-  
-  .button4 {
-    background-color: #faf8f6;
-    color: black;
-    border: 2px solid #ff9c1a;
-    margin: 0 auto;
-  }
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
 
-  .button4:hover {
-    background-color: #ff9c1a;
-    color: white;
-  }
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+  display: block;
+}
 
-  .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #faf8f6;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: #faf8f6;
+  color: black;
+  border: 2px solid #ff9c1a;
+}
+
+.button2:hover {
+  background-color: #ff9c1a;
+  color: white;
+}
+
+.button3 {
+  border: 2px solid gray;
+  color: black;
+}
+
+.button3:hover {
+  background-color: gray;
+  color: white;
+}
+
+.button4 {
+  background-color: #faf8f6;
+  color: black;
+  border: 2px solid #ff9c1a;
+  margin: 0 auto;
+}
+
+.button4:hover {
+  background-color: #ff9c1a;
+  color: white;
+}
+
+.popup {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.closeBtn {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 1rem 1.5rem;
-    width: 24rem;
-    border-radius: 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
 }
 
 .close-button1 {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
 }
 
 .close-button:hover {
-    background-color: darkgray;
+  background-color: darkgray;
 }
 
 .show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .rating-box {
-    position: relative;
-    background: #fff;
-    padding: 25px 50px 35px;
-    border-radius: 25px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-  }
-  .rating-box header {
-    font-size: 22px;
-    color: #dadada;
-    font-weight: 500;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .rating-box .stars {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-  }
-  .stars i {
-    color: #e6e6e6;
-    font-size: 35px;
-    cursor: pointer;
-    transition: color 0.2s ease;
-  }
-  .stars i.active {
-    color: #ff9c1a;
-  }
+  position: relative;
+  background: #fff;
+  padding: 25px 50px 35px;
+  border-radius: 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.rating-box header {
+  font-size: 22px;
+  color: #dadada;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.rating-box .stars {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.stars i {
+  color: #e6e6e6;
+  font-size: 35px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.stars i.active {
+  color: #ff9c1a;
+}
 
 
 /* Media query to make the sidebar disappear on small screens */
 @media (max-width: 700px) {
-    .sidebar {
-        left: -13rem; /* Hide the sidebar */
-    }
-    .sidebar a {
-        float: none; /* Reset float */
-    }
-    .content {
-        margin-left: 0;
-    }
+  .sidebar {
+    left: -13rem;
+    /* Hide the sidebar */
+  }
+
+  .sidebar a {
+    float: none;
+    /* Reset float */
+  }
+
+  .content {
+    margin-left: 0;
+  }
 }
 
 /* Media query to hide the sidebar entirely on even smaller screens */
 @media (max-width: 400px) {
-    .sidebar {
-        display: none; /* Hide the sidebar completely */
-    }
+  .sidebar {
+    display: none;
+    /* Hide the sidebar completely */
+  }
 }

@@ -1,159 +1,156 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <title>CookIT | View Recipe</title>
     <link rel="stylesheet" href="view.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
+
 <body>
-    <div class="main-header">
-        <input type="checkbox" id="menuToggle"> <!-- Input with id="menuToggle" -->
-        <label for="menuToggle" class="menu-toggle-label">&#9776;</label> <!-- Label with class, not id -->
-        <nav class="sidebar">
-        <div class="nav-container">
-            <label for="menuToggle" class="close-button"><span class="close-text">Close</span></label>
-            <a href="#home" class="menu-item home-icon">
-                <span class="icon">&#x1F3E0;</span>
-                <span class="text home-text">Browse Recipes</span>
-            </a>
-            <a href="#shop" class="menu-item shop-icon">
-                <span class="icon">&#x1F6D2;</span>
-                <span class="text shop-text">Shop</span>
-            </a>
-            <a href="#fridge" class="menu-item fridge-icon">
-                <span class="icon">&#x2744;</span>
-                <span class="text fridge-text">Fridge</span>
-            </a>
-            <a href="#profile" class="menu-item profile-icon">
-                <span class="icon">&#x1F464;</span>
-                <span class="text profile-text">Profile</span>
-            </a>
+    <header>
+        <div>
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+            <a href="../browse Recipes/browse.html">Browse Recipe</a>
+            <a href="../Purchase ingredients/purch-part2.html">Shop</a>
+            <a href="../Fridge/inventory.html">Inventory</a>
+            <a href="../Login-Register-Profile/Profile.html">Profile</a>
+            <a href="../Login-Register-Profile/login-register.html">Login</a>
+          </div>
+          <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
         </div>
-    </nav>
-    <div class="header-title"><h1>CookIT</h1></div>
+        <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
+      </header>
+    <img class="picture" src="./images/lobster-ravioli.jpg" alt="pizza" />
+    <div style="margin: 10px;">
+        <h1>Lobster Ravioli</h1>
+        <p>Cooking Time: 1h 45m<br>
+            Serving Size: 5 people<br>
+            Nutritional Value: 700 Calories, 20.4g Fat, 27.7g Carbs, 14.2g Protein, 3.5g Fiber
+            Fiber<br></p>
+        <div class="recipe-rating-container">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"> (25.4K)</span>
+        </div>
+
+        <div class="recipe-container">
+            <div class="ingredients-container">
+                <h2>Ingredients</h2>
+                <p> • 2 shallots</p>
+                <p> • 1 clove of garlic</p>
+                <p> • 3 eggs<p>
+                <p> • 2 Lobster tails</p>
+                <p> • 4 tbsp olive oil</p>
+                <p> • 1 bunch fresh thyme</p>
+                <p> • 1 bottle white wine</p>
+                <p> • 1 cup flour</p>
+                <p> • 1 cup heavy cream <p>
+                <p> • 1 lemmon</p>
+                <p> • 1 pound of butter</p>
+                <p> • 1 cup ricotta cheese</p>
+                <p> • Salt and black pepper, to taste</p>
+
+            </div>
+
+            <div class="recipe-steps-container">
+                <h2>Steps</h2>
+                <label class="container">In a large bowl, stir together the lobster, garlic, ricotta, lemon zest, salt, and pepper until combined.
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="container"> Divide the pasta dough into quarters and lightly dust with all-purpose flour to keep the pasta from sticking. Roll out each half using a pasta roller, beginning on the largest opening, Number 1, and gradually decreasing to the Number 5 setting. (You can also roll this by hand with a rolling pin to 1/16-inch thick.)
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="container">Place one dough sheet on a clean work surface, dollop the lobster mixture in 1 tablespoon portions about 1-inch apart.
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="container">Brush the dough around the filling with water. Top with the other dough sheet, and press around the filling to seal.
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
     
-    </div>
+                <label class="container">Cut into squares. Place the ravioli on a baking sheet, and refrigerate, uncovered, while continuing.
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
     
-    <div class="picture-container">
-        <img class="picture" src="./images/lobster-ravioli.jpg" alt="pizza"/>
-    </div>
-    <div class="recipe-title-container">
-        <div class="recipe-title"><h1>Lobster Ravioli</h1></div>
-    </div>
-    <div class="cooking-time">Cooking Time: 1h 45m</div>
-    <div class="cooking-time">Serving Size: 5 people</div>
-    <div class="nutritional-value">Nutritional Value: 700 Calories, 20.4g Fat, 27.7g Carbs, 14.2g Protein, 3.5g Fiber</div>
-    <div class="recipe-rating-container">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"> (10.4K)</span>
-    </div>
-    <div class="recipe-container">
-        <div class="ingredients-container">
-            <h2>Ingredients</h2>
-            <p> • 2 shallots</p>
-            <p> • 1 clove of garlic</p>
-            <p> • 3 eggs<p>
-            <p> • 2 Lobster tails</p>
-            <p> • 4 tbsp olive oil</p>
-            <p> • 1 bunch fresh thyme</p>
-            <p> • 1 bottle white wine</p>
-            <p> • 1 cup flour</p>
-            <p> • 1 cup heavy cream <p>
-            <p> • 1 lemmon</p>
-            <p> • 1 pound of butter</p>
-            <p> • 1 cup ricotta cheese</p>
-            <p> • Salt and black pepper, to taste</p>
-
+                <label class="container">Melt the butter in a large skillet over medium-high heat. Add the shallots. Cook, stirring often, until translucent, about 1 minute. Add the wine. Cook, stirring often until reduced by half. Whisk in the cream, sage or thyme, salt, and pepper. Cook, whisking constantly until slightly thickened, about 2 minutes. Remove from the heat.
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+    
+                <label class="container">Brush the dough around the filling with water. Top with the other dough sheet, and press around the filling to seal.
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+    
+                <label class="container">In a large pot of salted boiled water, add the chilled ravioli. Cook stirring occasionally, until the pasta is tender, about 2 to 5 minutes.
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+    
+                <label class="container">Using a slotted spoon, transfer the ravioli to the skillet with the cream sauce. Place the skillet over medium-high heat and return to a simmer, stirring occasionally, adding 2 to 4 tablespoons of pasta water if needed to loosen the sauce. Serve the lobster ravioli immediately.
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
         </div>
 
-        <div class="recipe-steps-container">
-            <h2>Steps</h2>
-            <label class="container">In a large bowl, stir together the lobster, garlic, ricotta, lemon zest, salt, and pepper until combined.
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
-            
-            <label class="container"> Divide the pasta dough into quarters and lightly dust with all-purpose flour to keep the pasta from sticking. Roll out each half using a pasta roller, beginning on the largest opening, Number 1, and gradually decreasing to the Number 5 setting. (You can also roll this by hand with a rolling pin to 1/16-inch thick.)
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-            
-            <label class="container">Place one dough sheet on a clean work surface, dollop the lobster mixture in 1 tablespoon portions about 1-inch apart.
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-            
-            <label class="container">Brush the dough around the filling with water. Top with the other dough sheet, and press around the filling to seal.
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">Cut into squares. Place the ravioli on a baking sheet, and refrigerate, uncovered, while continuing.
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">Melt the butter in a large skillet over medium-high heat. Add the shallots. Cook, stirring often, until translucent, about 1 minute. Add the wine. Cook, stirring often until reduced by half. Whisk in the cream, sage or thyme, salt, and pepper. Cook, whisking constantly until slightly thickened, about 2 minutes. Remove from the heat.
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">Brush the dough around the filling with water. Top with the other dough sheet, and press around the filling to seal.
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">In a large pot of salted boiled water, add the chilled ravioli. Cook stirring occasionally, until the pasta is tender, about 2 to 5 minutes.
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">Using a slotted spoon, transfer the ravioli to the skillet with the cream sauce. Place the skillet over medium-high heat and return to a simmer, stirring occasionally, adding 2 to 4 tablespoons of pasta water if needed to loosen the sauce. Serve the lobster ravioli immediately.
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </div>
-    </div>
-    <button class="button button1" onclick="toggleModal('1')">Complete Recipe!</button>
-    <div class="modal" id="modal1">
-        <div class="modal-content" id="one">
-            <span onclick="closePopup()" class="close-button1">&times;</span>
-            <h1 align="center">Ingredients Updated</h1>
-            <a align="center">The quantities of your ingredients have been successfully updated following the completion of this recipe!</a>
-            <button class="button button4" onclick="toggleModal('2')">Next</button>
-        </div>
-    </div>
-    <div class="modal" id="modal2">
-        <div class="modal-content" id="two">
-            <span class="close-button1">&times;</span>
-            <h1 align="center">Write a review</h1>
-            <div class="rating-box">
-                <header>Tell us what you think of this recipe!</header>
-                <div class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <label for="freeform">Type your review below:</label>
-                <br>
-                <textarea id="freeform" name="freeform" rows="4" cols="30"></textarea>
-              </div>
-              <a href="/Fridge/inventory.html">
-              <button class="button button2" onclick="document.getElementById('freeform').value = ''">Leave Review</button>
-              </a>
-              <a href="/Fridge/inventory.html">
-                <button class="button button3" onclick="document.getElementById('freeform').value = ''" >Skip</button>
-              </a>
-        </div>
     </div>
 
+    <div id="overlay"></div>
 
-<script src="view.js"></script>
+    <div id="popup1" class="popup">
+        <span class="closeBtn" onclick="closePopup('popup1')">&times;</span>
+        <h1 style="text-align: center;">Ingredients Updated</h1>
+        <a style="text-align: center; margin-bottom: 10px;">The quantities of your ingredients have been successfully updated following the
+            completion of this recipe!</a>
+        <button class="button button4" onclick="openPopup('popup2')">Next</button>
+    </div>
+
+    <div id="popup2" class="popup">
+        <span class="closeBtn" onclick="closePopup('popup2')">&times;</span>
+        <h1 style="text-align: center; margin-bottom: 0;">Write a review</h1>
+        <div class="rating-box">
+            <p style="font-size: 1rem; color: black;">Tell us what you think of this recipe!</p>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <label for="freeform" style="margin-top: 10px;">Type your review below:</label>
+            <br>
+            <textarea id="freeform" name="freeform" style="width: 100%; resize:none;"></textarea>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 50px;">
+            <a href="/Fridge/inventory.html">
+                <button style="padding: 10px 20px 10px 20px" class="button button3" onclick="document.getElementById('freeform').value = ''">Skip</button>
+            </a>
+            <a href="/Fridge/inventory.html">
+                <button class="button button2" onclick="document.getElementById('freeform').value = ''">Leave
+                    Review</button>
+            </a>
+        </div>
+
+    </div>
+
+    <button style="float:right; margin: 0 30px 30px 0"class="button button1" onclick="openPopup('popup1')">Complete Recipe!</button>
+
+    <script src="view.js"></script>
 </body>
+
 </html>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Login</title>
+    <title>CookIT | Login</title>
     <link rel="stylesheet" href="loginregister.css" media="screen">
 <link rel="stylesheet" href="Login.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -19,14 +19,41 @@
 		"@type": "Organization",
 		"name": ""
 }</script>
+<script>
+  let navOpen = false;
+  function toggleNav(sidenavId) {
+      const isOpen = (sidenavId === "mySidenav") ? navOpen : fridgenavOpen;
+      const width = isOpen ? "0" : "300px";
+
+      if (sidenavId === "mySidenav") {
+          navOpen = !navOpen;
+      } else if (sidenavId === "fridgeSidenav") {
+          fridgenavOpen = !fridgenavOpen;
+      }
+
+      document.getElementById(sidenavId).style.width = width;
+  }
+</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Login">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-home-page="login-register.html" data-home-page-title="Login" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-2167"><div class="u-clearfix u-sheet u-sheet-1">
-      
-      </div></header>
-    <section class="u-align-left u-clearfix u-section-1" id="sec-92fe">
+  <body data-home-page="login-register.html" data-home-page-title="Login" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
+    <header>
+      <div>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+          <a href="../browse Recipes/browse.html">Browse Recipe</a>
+          <a href="../Purchase ingredients/purch-part2.html">Shop</a>
+          <a href="../Fridge/inventory.html">Inventory</a>
+          <!-- <a href="../Login-Register-Profile/Profile.html">Profile</a>
+          <a href="../Login-Register-Profile/login-register.html">Login</a> -->
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
+      </div>
+      <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
+    </header>
+    <section style="padding-top: 50px;" class="u-align-left u-clearfix u-section-1" id="sec-92fe">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-expanded-width u-tab-links-align-justify u-tabs u-tabs-1">
           <ul class="u-spacing-30 u-tab-list u-unstyled" role="tablist">
@@ -80,7 +107,7 @@
                     <input type="hidden" name="formServices" value="e7ce658b-df0e-244f-246c-7b31d0bcc61c">
                   </form>
                 </div>
-                <a href="/browse%20Recipes/browse2.html" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-hover-white u-btn-4">Continue Browsing as Guest</a>
+                <a href="../browse Recipes/browse.html" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-hover-white u-btn-4">Continue Browsing as Guest</a>
               </div>
             </div>
             <div class="u-container-style u-tab-pane" id="tab-4d57" role="tabpanel" aria-labelledby="link-tab-4d57">

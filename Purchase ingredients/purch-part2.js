@@ -26,6 +26,20 @@ const dummyLocations = [
   "42 Wallaby Way, Sydney",
 ];
 
+let navOpen = false;
+function toggleNav(sidenavId) {
+  const isOpen = (sidenavId === "mySidenav") ? navOpen : fridgenavOpen;
+  const width = isOpen ? "0" : "300px";
+
+  if (sidenavId === "mySidenav") {
+      navOpen = !navOpen;
+  } else if (sidenavId === "fridgeSidenav") {
+      fridgenavOpen = !fridgenavOpen;
+  }
+
+  document.getElementById(sidenavId).style.width = width;
+}
+
 function getDefaults() {
   showPreviouslyBought();
   showCategory("Fruits");
@@ -449,7 +463,7 @@ document
 window.onload = function () {
   var userLocation = sessionStorage.getItem("userLocation");
   if (!userLocation) {
-    document.getElementById("location-popup").style.display = "block";
+    document.getElementById("location-popup").style.display = "grid";
     disableScrolling();
   }
 };
@@ -828,28 +842,30 @@ document
     };
     sessionStorage.setItem("cardDetails", cardDetails);
   });
-
-function confirmOrder() {
-  document.getElementById("loading-screen-truck").style.display = "grid";
-
-  setTimeout(() => {
-    document.getElementById("loading-screen-truck").style.display = "none";
-
-    const shoppingCart = cartItems.map((item) => {
-      return {
-        name: item.name,
-        image: item.image,
-        quantity: item.quantity,
-      };
-    });
-
-    sessionStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
-    sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
-
-    // Redirect happens after the timeout now
-    window.location.href = "nextpage.html";
-  }, 3000);
-}
+  function confirmOrder() {
+    document.getElementById("loading-screen-truck").style.display = "grid";
+  
+    setTimeout(() => {
+      document.getElementById("loading-screen-truck").style.display = "none";
+  
+      const shoppingCart = cartItems.map((item) => {
+        return {
+          name: item.name,
+          image: item.image,
+          quantity: item.quantity,
+        };
+      });
+  
+      sessionStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+      sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
+      document.getElementById("check-mark-container").style.display = "grid";
+      setTimeout(() => {
+        document.getElementById("check-mark-container").style.display = "none";
+        window.location.href = "../Fridge/inventory.html";
+      }, 3000);
+      // Redirect happens after the timeout now
+    }, 3000);
+  }
 
 function showPreviouslyBought() {
   // Update the category title

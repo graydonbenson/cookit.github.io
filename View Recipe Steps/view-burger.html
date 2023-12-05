@@ -1,129 +1,127 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <title>CookIT | View Recipe</title>
     <link rel="stylesheet" href="view.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
+
 <body>
-    <div class="main-header">
-        <input type="checkbox" id="menuToggle"> <!-- Input with id="menuToggle" -->
-        <label for="menuToggle" class="menu-toggle-label">&#9776;</label> <!-- Label with class, not id -->
-        <nav class="sidebar">
-        <div class="nav-container">
-            <label for="menuToggle" class="close-button"><span class="close-text">Close</span></label>
-            <a href="#home" class="menu-item home-icon">
-                <span class="icon">&#x1F3E0;</span>
-                <span class="text home-text">Browse Recipes</span>
+    <header>
+        <div>
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+            <a href="../browse Recipes/browse.html">Browse Recipe</a>
+            <a href="../Purchase ingredients/purch-part2.html">Shop</a>
+            <a href="../Fridge/inventory.html">Inventory</a>
+            <a href="../Login-Register-Profile/Profile.html">Profile</a>
+            <a href="../Login-Register-Profile/login-register.html">Login</a>
+          </div>
+          <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
+        </div>
+        <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
+      </header>
+    <img class="picture" src="./images/loaded-burgers.jpg" alt="pizza" />
+    <div style="margin: 10px;">
+        <h1>Easy Cheeseburger</h1>
+        <p>Cooking Time: 45m<br>
+            Serving Size: 1 people<br>
+            Nutritional Value: 500 Calories, 10.4g Fat, 22.7g Carbs, 12.2g Protein, 2.5g Fiber
+            Fiber<br></p>
+        <div class="recipe-rating-container">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"> (25.4K)</span>
+        </div>
+
+        <div class="recipe-container">
+            <div class="ingredients-container">
+                <h2>Ingredients</h2>
+                <p> • 1 Sesame Sead Bun</p>
+                <p> • 1.5lbs lean ground beef</p>
+                <p> • 1 onion<p>
+                <p> • 1 cup of chredded cheddar cheese</p>
+                <p> • 1 Egg</p>
+                <p> • 4 tbsp olive oil</p>
+                <p> • Toppings of your choice!</p>
+                <p> • black pepper, to taste</p>
+
+            </div>
+
+            <div class="recipe-steps-container">
+                <h2>Steps</h2>
+                <label class="container">Combine all ingredients in a single large bowl.
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="container">Meanwhile, preheat a non stick pan with a dash of olive oil.
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="container">Grill on each side for 4 mins, or unitl golden brown.
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="container">Serve on bun and top as you please!
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="overlay"></div>
+
+    <div id="popup1" class="popup">
+        <span class="closeBtn" onclick="closePopup('popup1')">&times;</span>
+        <h1 style="text-align: center;">Ingredients Updated</h1>
+        <a style="text-align: center; margin-bottom: 10px;">The quantities of your ingredients have been successfully updated following the
+            completion of this recipe!</a>
+        <button class="button button4" onclick="openPopup('popup2')">Next</button>
+    </div>
+
+    <div id="popup2" class="popup">
+        <span class="closeBtn" onclick="closePopup('popup2')">&times;</span>
+        <h1 style="text-align: center; margin-bottom: 0;">Write a review</h1>
+        <div class="rating-box">
+            <p style="font-size: 1rem; color: black;">Tell us what you think of this recipe!</p>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <label for="freeform" style="margin-top: 10px;">Type your review below:</label>
+            <br>
+            <textarea id="freeform" name="freeform" style="width: 100%; resize:none;"></textarea>
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 50px;">
+            <a href="/Fridge/inventory.html">
+                <button style="padding: 10px 20px 10px 20px" class="button button3" onclick="document.getElementById('freeform').value = ''">Skip</button>
             </a>
-            <a href="#shop" class="menu-item shop-icon">
-                <span class="icon">&#x1F6D2;</span>
-                <span class="text shop-text">Shop</span>
-            </a>
-            <a href="#fridge" class="menu-item fridge-icon">
-                <span class="icon">&#x2744;</span>
-                <span class="text fridge-text">Fridge</span>
-            </a>
-            <a href="#profile" class="menu-item profile-icon">
-                <span class="icon">&#x1F464;</span>
-                <span class="text profile-text">Profile</span>
+            <a href="/Fridge/inventory.html">
+                <button class="button button2" onclick="document.getElementById('freeform').value = ''">Leave
+                    Review</button>
             </a>
         </div>
-    </nav>
-    <div class="header-title"><h1>CookIT</h1></div>
-    
-    </div>
-    
-    <div class="picture-container">
-        <img class="picture" src="./images/loaded-burgers.jpg" alt="pizza"/>
-    </div>
-    <div class="recipe-title-container">
-        <div class="recipe-title"><h1>Easy Cheeseburger</h1></div>
-    </div>
-    <div class="cooking-time">Cooking Time: 45m</div>
-    <div class="cooking-time">Serving Size: 1 person</div>
-    <div class="nutritional-value">Nutritional Value: 500 Calories, 10.4g Fat, 22.7g Carbs, 12.2g Protein, 2.5g Fiber</div>
-    <div class="recipe-rating-container">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"> (10.4K)</span>
-    </div>
-    <div class="recipe-container">
-        <div class="ingredients-container">
-            <h2>Ingredients</h2>
-            <p> • 1 Sesame Sead Bun</p>
-            <p> • 1.5lbs lean ground beef</p>
-            <p> • 1 onion<p>
-            <p> • 1 cup of chredded cheddar cheese</p>
-            <p> • 1 Egg</p>
-            <p> • 4 tbsp olive oil</p>
-            <p> • Toppings of your choice!</p>
-            <p> • black pepper, to taste</p>
-
-        </div>
-
-        <div class="recipe-steps-container">
-            <h2>Steps</h2>
-            <label class="container">Combine all ingredients in a single large bowl.
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
-            
-            <label class="container">Meanwhile, preheat a non stick pan with a dash of olive oil.
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-            
-            <label class="container">Grill on each side for 4 mins, or unitl golden brown.
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-            
-            <label class="container">Serve on bun and top as you please!
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </div>
-    </div>
-    <button class="button button1" onclick="toggleModal('1')">Complete Recipe!</button>
-    <div class="modal" id="modal1">
-        <div class="modal-content" id="one">
-            <span onclick="closePopup()" class="close-button1">&times;</span>
-            <h1 align="center">Ingredients Updated</h1>
-            <a align="center">The quantities of your ingredients have been successfully updated following the completion of this recipe!</a>
-            <button class="button button4" onclick="toggleModal('2')">Next</button>
-        </div>
-    </div>
-    <div class="modal" id="modal2">
-        <div class="modal-content" id="two">
-            <span class="close-button1">&times;</span>
-            <h1 align="center">Write a review</h1>
-            <div class="rating-box">
-                <header>Tell us what you think of this recipe!</header>
-                <div class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <label for="freeform">Type your review below:</label>
-                <br>
-                <textarea id="freeform" name="freeform" rows="4" cols="30"></textarea>
-              </div>
-              <a href="/Fridge/inventory.html">
-              <button class="button button2" onclick="document.getElementById('freeform').value = ''">Leave Review</button>
-              </a>
-              <a href="/Fridge/inventory.html">
-                <button class="button button3" onclick="document.getElementById('freeform').value = ''" >Skip</button>
-              </a>
-        </div>
     </div>
 
+    <button style="float:right; margin: 0 30px 30px 0"class="button button1" onclick="openPopup('popup1')">Complete Recipe!</button>
 
-<script src="view.js"></script>
+    <script src="view.js"></script>
 </body>
+
 </html>
+

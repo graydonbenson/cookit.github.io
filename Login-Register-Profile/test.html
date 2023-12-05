@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookIT | My Profile</title>
+    <link rel="stylesheet" href="test.css">
+    <header>
+        <div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+                <a href="../browse Recipes/browse.html">Browse Recipes</a>
+                <a href="../Purchase ingredients/purch-part2.html">Shop</a>
+                <a href="../Fridge/inventory.html">Inventory</a>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
+        </div>
+        <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
+    </header>
+</head>
+
+<body>
+<script>
+    let navOpen = false;
+    function toggleNav(sidenavId) {
+      const isOpen = navOpen;
+      const width = isOpen ? "0" : "300px";
+      navOpen = !navOpen;
+      document.getElementById(sidenavId).style.width = width;
+    }
+</script>
+</body>
+
+</html>

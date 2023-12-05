@@ -1,3 +1,51 @@
+header {
+  display: flex;
+  align-items: center;
+  background-color: wheat;
+  padding: 10px;
+}
+
+header h1 {
+  margin: 0px auto;
+  cursor: pointer;
+}
+
+/* SIDE BAR */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: wheat;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: rgb(219, 144, 6);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
 .fr-clearfix::after {
   clear: both;
   display: block;
@@ -376,7 +424,7 @@ details,
 figcaption,
 figure,
 footer,
-header,
+,
 main,
 menu,
 nav,
@@ -421,10 +469,10 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
+/* h1 {
   font-size: 2em;
   margin: 0.67em 0;
-}
+} */
 mark {
   background-color: #ff0;
   color: #000;
@@ -3076,12 +3124,12 @@ body,
 aside,
 .u-sidebar-block,
 section,
-header,
+,
 footer {
   position: relative;
 }
 section > *,
-header > *,
+ > *,
 footer > *,
 .u-sheet > *,
 .u-section-row > * {
@@ -17569,7 +17617,7 @@ html {
   font-size: 1rem;
   line-height: 1.6;
 }
-.u-body h1,
+/* .u-body h1, */
 .u-body h2,
 .u-body h3,
 .u-body h4,
@@ -17577,7 +17625,7 @@ html {
 .u-body h6 {
   padding: 0;
 }
-h1,
+/* h1, */
 h2,
 h3,
 h4,
@@ -17589,9 +17637,9 @@ h6 {
   font-weight: 500;
   color: inherit;
 }
-h1 {
+/* h1 {
   font-size: 2.25rem;
-}
+} */
 h2 {
   font-size: 1.5rem;
 }
@@ -25140,7 +25188,7 @@ a.u-button-style.u-border-20 {
 .u-body {
   font-family: 'Open Sans',sans-serif;
 }
-h1,
+/* h1, */
 h2,
 h3,
 h4,
@@ -31694,6 +31742,9 @@ input.u-field-input.u-field-input.u-border-active-color-2-dark-3:checked {
 .u-separator-color-2-dark-2:after {
   border-color: #6b4748;
   stroke: #6b4748;
+}
+.sidenav{
+  z-index:4;
 }
 .u-button-style.u-border-color-2-dark-2 {
   border-color: #6b4748 !important;
@@ -41568,14 +41619,14 @@ a.u-link.u-text-hover-grey-90:hover {
         margin-top: 20px;
         margin-bottom: 20px;
         }
-        h1:not(.u-title)
+        /* h1:not(.u-title)
         {
         font-weight: 400;
         font-size: 4.5rem;
         line-height: 1.1;
         margin-top: 20px;
         margin-bottom: 20px;
-        }
+        } */
         h2:not(.u-subtitle)
         {
         font-weight: 400;

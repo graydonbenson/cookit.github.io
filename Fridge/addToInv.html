@@ -10,15 +10,16 @@
         <div>
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
-                <a href="../browse Recipes/browse.html">Browse Recipes</a>
-                <a href="inventory.html">Inventory</a>
+                <a href="../browse Recipes/browse.html">Browse Recipe</a>
                 <a href="../Purchase ingredients/purch-part2.html">Shop</a>
+                <a href="../Fridge/inventory.html">Inventory</a>
                 <a href="../Login-Register-Profile/Profile.html">Profile</a>
+                <a href="../Login-Register-Profile/login-register.html">Login</a>
             </div>
             <!-- three lines icons -->
             <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
         </div>
-        <h1 onclick="document.location='../browse Recipes/browse2.html'">CookIT</h1>
+        <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
         <div>
             <div id="fridgeSidenav" class="sidenav fridgeSidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('fridgeSidenav')">&times;</a>
@@ -43,10 +44,8 @@
             <h2>Add Items Now</h2>
             <p>By Searching with the seach bar, or by browsing through the categories</p>
             <div class="search-container">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
+                <input type="text" placeholder="Search.." name="search" id="searchInput">
+                <button type="submit" onclick="searchAndScroll()"><i class="fa fa-search"></i></button>
             </div>
         </div>
 
@@ -192,6 +191,32 @@
             }
         }
 
+        function searchAndScroll() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            for (const category of categoryList) {
+                for (const item of category.items) {
+                    if (item.name.toLowerCase().includes(searchTerm)) {
+                        const itemElement = document.querySelector(`[data-item-name="${item.name}"]`);
+                        
+                        if (itemElement) {
+                            itemElement.scrollIntoView({ behavior: 'smooth' });
+
+                            itemElement.classList.add('wobble-hor-bottom');
+
+                            // gotta remove the anim after 2 sec?
+                            setTimeout(() => {
+                                itemElement.classList.remove('wobble-hor-bottom');
+                            }, 2000);
+
+                            return; // stop loop when found
+                        }
+                    }
+                }
+            }
+            alert(`No item with the name "${searchTerm}" found.`);
+        }
+
         function generateCategoriesAndItems() {
             const categoriesContainer = document.querySelector('.categoriesContainer');
 
@@ -222,6 +247,7 @@
                     const imageContainer = document.createElement('div');
                     imageContainer.className = 'imageContainer';
                     const image = document.createElement('img');
+                    image.draggable = false;
                     image.src = item.image;
                     imageContainer.appendChild(image);
 
@@ -230,6 +256,9 @@
                     textContainer.className = 'textContainer';
                     const itemName = document.createElement('p');
                     itemName.textContent = item.name;
+                    // for search
+                    itemContainer.setAttribute('data-item-name', item.name);
+
                     const addButton = document.createElement('button');
                     addButton.textContent = 'Add to Inventory';
 
