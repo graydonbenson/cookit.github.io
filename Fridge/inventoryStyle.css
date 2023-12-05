@@ -1,11 +1,10 @@
-body{
-    margin:0;
+body {
+    margin: 0;
     font-family: "Lato", sans-serif;
-    overflow: hidden;
-}
-
-
-header {
+    /* overflow: hidden; */
+  }
+  
+  header {
     display: flex;
     align-items: center;
     background-color: wheat;
@@ -53,11 +52,9 @@ header {
     margin-left: 50px;
   }
   
-
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  
   }
   
   /* Track */
@@ -65,71 +62,71 @@ header {
     background: rgb(235, 235, 235);
     border-radius: 5px;
   }
-   
+  
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: rgb(187, 153, 110);
     border-radius: 5px;
   }
-
-.app {
+  
+  .app {
     height: 100vh;
     gap: 50px;
-}
-
-
-.idk{
+    background-color: antiquewhite;
+  }
+  
+  .idk {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.fridgeContainer{
+  }
+  
+  .fridgeContainer {
     background-color: #a0a0a0;
     border-radius: 15px;
     width: 73vw;
     height: 80vh;
-}
-
-.fridge1{
+  }
+  
+  .fridge1 {
     background-color: rgb(249, 249, 249);
     width: 97%;
     height: 95%;
-    border-radius:inherit;
-}
-
-.fridge2{
-    background-color: #D9D9D9;
+    border-radius: inherit;
+  }
+  
+  .fridge2 {
+    background-color: #d9d9d9;
     width: inherit;
     height: inherit;
     border-radius: inherit;
-}
-
-.itemsContainer{
+  }
+  
+  .itemsContainer {
     display: flex;
     width: 97%;
     height: 95%;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    overflow-x:hidden;
-    overflow-y:scroll;
-}
-
-.itemContainer{
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+  .itemContainer {
     position: relative;
     margin: 20px;
     width: 200px;
     height: 210px;
     border-radius: 15px;
     cursor: pointer;
-}
-
-.itemContainer:hover{
+  }
+  
+  .itemContainer:hover {
     border: 5px burlywood solid;
-}
-
-.itemContainer h2{
+  }
+  
+  .itemContainer h2 {
     background-color: burlywood;
     padding: 2px 10px 2px 10px;
     border-radius: 10px;
@@ -138,16 +135,16 @@ header {
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
-}
-
-.itemContainer img{
+  }
+  
+  .itemContainer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
-}
-
-.controls{
+  }
+  
+  .controls {
     position: absolute;
     bottom: 15px;
     left: 50%;
@@ -155,9 +152,9 @@ header {
     display: flex;
     flex-direction: row;
     text-align: center;
-}
-
-.controls input{
+  }
+  
+  .controls input {
     text-align: center;
     width: 35px;
     height: 25px;
@@ -166,44 +163,64 @@ header {
     background: #8e785a;
     border: none;
     cursor: default;
-}
-
-.incDecButton{
+  }
+  
+  .incDecButton {
     color: white;
     width: 30px;
     font-size: 20px;
     visibility: hidden;
-}
-
-.incDecButton:hover{
+  }
+  
+  .incDecButton:hover {
     cursor: pointer;
-}
-
-.dec{
+  }
+  
+  .dec {
     border-radius: 5px 0 0 5px;
     background-color: red;
-}
-
-.inc{
+  }
+  
+  .inc {
     border-radius: 0 5px 5px 0;
     background-color: green;
-}
-
-.buttonContainer{
+  }
+  
+  .buttonContainer {
     height: 100%;
-}
-
-.button{
-    position: absolute;
-    bottom:40px;
-    border-radius: 15px;
+  
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-bottom: 10rem;
+  }
+  .buttonLabel {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  .button {
+    /* position: absolute;
+    bottom: 40px; */
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
     font-size: 5rem;
     background-color: burlywood;
     width: 100px;
     height: 100px;
     color: white;
     font-weight: 700;
-}
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: rgb(196, 162, 118);
+  }
+  .your-fridge {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }

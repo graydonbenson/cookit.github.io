@@ -16,7 +16,7 @@ a {
   color: white;
 }
 
-a:visited{
+a:visited {
   color: white;
 }
 
@@ -34,6 +34,21 @@ a:visited{
 /* .closebtn{
   position: absolute;
 } */
+
+
+.closebtns{
+  padding-right: 1.25rem !important;
+  font-size: 2.5rem !important;
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.closebtns i{
+  
+  font-weight: 400;
+}
+
 
 /* .sidebar {
   transition: translate var(--animation-timing);
@@ -107,75 +122,93 @@ header h1 {
   color: rgb(219, 144, 6);
 }
 
-.sidenav .closebtn {
+.closebtn {
+  background-color: var(--tan-color);
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  top: 5px;
+  /* right: 30px; */
+  right: 10px;
+  font-size: 1.5rem;
+  width: 30px; /* Size of the button */
+  height: 30px; /* Size of the button */
+  color: #ffffff; /* White color for the 'X' text */
+  font-size: 16px; /* Adjust as needed */
+  line-height: 30px; /* Center the 'X' vertically */
+  text-align: center; /* Center the 'X' horizontally */
+  border: none; /* Optional: or '1px solid #000' for a border */
+  border-radius: 15px; /* Optional: for rounded corners */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: for shadow */
+  transition: 0.3s;
 }
-
-
-
+.closebtn:hover {
+  background-color: wheat;
+}
 
 .title {
-    font-weight: bold;
-    color: #ffffff;
+  font-weight: bold;
+  color: #ffffff;
 }
-
-
 
 /* Styles for the search bar */
 .search-container {
-    display: flex;
-    max-width: 400px; /* Adjust the width of the search bar container */
-    margin: 0 auto; /* Center the search bar */
-    padding-bottom: 2%;
+  display: flex;
+  max-width: 400px; /* Adjust the width of the search bar container */
+  margin: 0 auto; /* Center the search bar */
+  padding-bottom: 2%;
 }
 
 input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px 0 0 5px; /* Rounded corners on the left side */
-    outline: none;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px 0 0 5px; /* Rounded corners on the left side */
+  outline: none;
 }
 
 input[type="text"]:focus {
-    border-color: #ff7043; /* Change the border color on focus */
+  border-color: #ff7043; /* Change the border color on focus */
 }
 
 button[type="submit"] {
-    padding: 10px 15px;
-    background-color: #ff7043; /* Background color of the search button */
-    color: white;
-    border: none;
-    border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
-    cursor: pointer;
+  padding: 10px 15px;
+  background-color: #ff7043; /* Background color of the search button */
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+  cursor: pointer;
 }
 
 button[type="submit"]:hover {
-    background-color: #e65a2e; /* Change the background color on hover */
+  background-color: #e65a2e; /* Change the background color on hover */
 }
-
+.filter-buttons {
+  background-color: white;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+}
 .filter-buttons button {
-    margin: 0 10px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: antiquewhite;
-    color: black;
-    cursor: pointer;
-    z-index: 2;
+  margin: 0 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  color: black;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.3s;
+}
+.filter-buttons button:hover {
+  background-color: rgb(218, 205, 187);
 }
 
 .time-filter-popup {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ccc;
-    z-index: 2;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 2;
 }
 
 .cuisine-filter-popup {
@@ -189,74 +222,74 @@ button[type="submit"]:hover {
 
 /* Main Styles */
 main {
-    padding: 20px;
+  padding: 20px;
 }
 
 .recipe-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* Aligns recipes in the center */
-    
 }
 
 .recipe {
-    width: 500px;
-    color: black;
-    border: 5px solid rgba(2, 2, 2, 0.2);
-    margin:3% 40px 0% 70px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
+  width: 500px;
+  color: black;
+  border: 5px solid rgba(2, 2, 2, 0.2);
+  margin: 3% 40px 0% 70px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-color: red;
 }
 
 .recipe img {
-    width: 50%;
-    margin-right: 20px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    float: left;
+  width: 50%;
+  margin-right: 20px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  float: left;
 }
 
 .recipe-details {
-    text-align: left;
-    color: #000000;
-
+  text-align: left;
+  color: #000000;
 }
 
 .favorite-btn {
-    border: none;
-    background: none;
-    cursor: pointer;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 .popup {
-    display: none;
-    position: fixed;
-    top: 0%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
-    z-index: 1;
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+  z-index: 1;
 }
 
-
 .popup-content {
-    text-align: center;
-    background-color: tan; 
-    position: absolute;
-    top:-14%;
-    left:35%;
-    margin: 20% auto;
-    padding: 1px;
-    border: 1px solid #000000;
-    width: 30%;
+  text-align: center;
+  background-color: tan;
+  position: absolute;
+  top: -14%;
+  left: 35%;
+  margin: 20% auto;
+  padding: 0.5rem;
+  border: 0.25px solid #7c7c7c;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  width: 30%;
 }
 
 ul {
   list-style: none;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
 }
@@ -265,17 +298,17 @@ li {
   width: 50%; /* Two items per row */
   height: 50%; /* Two items per column */
   box-sizing: border-box;
-  border: 1px solid #D2B48C; /* Example border, you can modify this */
+  border: 1px solid #d2b48c; /* Example border, you can modify this */
 }
 
 .time-options {
-    margin: 0 10px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: antiquewhite;
-    color: black;
-    cursor: pointer;
+  margin: 0 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  color: black;
+  cursor: pointer;
 }
 
 .cuisine-options {
@@ -289,47 +322,75 @@ li {
 }
 
 .close {
-    float: right;
-    cursor: pointer;
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: wheat;
+  color: white; /* White text */
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  border: none;
+  border-radius: 50%; /* Circular shape */
+  text-align: center;
+  font-size: 16px; /* Size of the text */
+  line-height: 20px; /* Center the text vertically */
+  width: 30px; /* Width of the button */
+  height: 30px; /* Height of the button */
+  transition: 0.3s;
+  color: black;
+}
+
+.close:hover {
+  color: white;
+  background-color: #d32f2f; /* Darker shade of red on hover */
+}
+
+.close-container {
+  /* background-color: red; */
+  padding: 0.25rem;
+  display: flex;
+  justify-content: flex-end;
 }
 .rating {
-    display: inline-block;
+  display: inline-block;
 }
 
 .stars1::before {
-    font-size: 30px;
-    content: "★★★★";
-    letter-spacing: 5px;
-    color: #ffcc00; /* Default color for empty stars */
+  font-size: 30px;
+  content: "★★★★";
+  letter-spacing: 5px;
+  color: #ffcc00; /* Default color for empty stars */
 }
 
 .stars2::before {
-    font-size: 30px;
-    content: "★★★★★";
-    letter-spacing: 5px;
-    color: #ffcc00; /* Default color for empty stars */
+  font-size: 30px;
+  content: "★★★★★";
+  letter-spacing: 5px;
+  color: #ffcc00; /* Default color for empty stars */
 }
 
 .stars3::before {
-    font-size: 30px;
-    content: "★★★★";
-    letter-spacing: 5px;
-    color: #ffcc00; /* Default color for empty stars */
+  font-size: 30px;
+  content: "★★★★";
+  letter-spacing: 5px;
+  color: #ffcc00; /* Default color for empty stars */
 }
 
-
-
-.text-block{
+.text-block {
   font-size: 22px;
-  background-color: rgba(243, 243, 243, 0.3);
+
+  background-color: var(--tan-color);
   text-align: center;
   margin: 0% 20% 0% 20%;
-  border-radius: 8px;
+  border-radius: 1rem;
   padding-bottom: 1%;
   padding-top: 1%;
-  }
+  padding: 1rem;
+  border: 0.25px solid gray;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
 
-  *,
+*,
 *::after,
 *::before {
   box-sizing: border-box;
@@ -363,7 +424,9 @@ input[type="text"] {
 }
 
 button[type="submit"] {
-  background-color: var(--tan-color); /* Use the custom tan color for the button */
+  background-color: var(
+    --tan-color
+  ); /* Use the custom tan color for the button */
 }
 
 button[type="submit"]:hover {
@@ -379,14 +442,37 @@ button[type="submit"]:hover {
 /* Recipe Boxes */
 .recipe {
   border: 5px solid var(--tan-color); /* Use the custom tan color for the border */
-  background-color: rgba(210, 180, 140, 0.2); /* Adjusted tan background with transparency */
+  background-color: rgba(
+    210,
+    180,
+    140,
+    0.2
+  ); /* Adjusted tan background with transparency */
+  cursor: pointer;
+  transition: 0.2s;
+}
+.recipe:hover {
+  transform: scale(1.05);
 }
 
 /* Popup */
 .popup-content {
-  background-color: var(--tan-color); /* Use the custom tan color for the popup */
+  background-color: var(--tan-color);
 }
 
+.popup-content .button-container {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.popup-content .button-container button {
+  transition: 0.3s;
+}
+.time-options:hover {
+  background-color: #d4c09b;
+}
 .time-options {
   background-color: #f5deb3; /* Light goldenrod color for time options */
   color: #222; /* Darker text color */
@@ -394,7 +480,7 @@ button[type="submit"]:hover {
 
 .cuisine-options {
   background-color: #f5deb3; /* Light goldenrod color for time options */
-  color: #222; /* Darker text color */ 
+  color: #222; /* Darker text color */
 }
 
 /* Stars */
@@ -402,10 +488,6 @@ button[type="submit"]:hover {
 .stars2::before,
 .stars3::before {
   color: #b8860b; /* Dark goldenrod color for stars */
-}
-
-.text-block {
-  background-color: rgba(250, 153, 153, 0.523); /* Slightly lighter background */
 }
 
 /* Additional Changes */
@@ -425,7 +507,6 @@ button[type="submit"]:hover {
   color: #d2b48c; /* Used the custom tan color for title text */
 }
 
-
 .recipe-sidebar {
   position: fixed;
   top: 0;
@@ -436,24 +517,50 @@ button[type="submit"]:hover {
   transition: right 0.3s ease; /* Add transition for smooth sliding effect */
   overflow: auto; /* Enable scrolling if content exceeds the sidebar */
   z-index: 2; /* Set a higher z-index to ensure it appears above other content */
+  padding: 1rem;
+  box-shadow: 4px 0px 100px 70px rgba(0, 0, 0, 0.539);
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  padding-top: 2rem;
 }
 
 .recipe-sidebar.active {
   right: 0; /* Show the sidebar by bringing it to the viewport */
 }
 
-.text-sub{
-  margin-left:4.5%;
+.view-recipe-btn {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  font-size: 1.25rem;
+  width: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.view-recipe-btn:hover {
+  background-color: #222;
+  transform: scale(1.05);
+}
+.recipe-sidebar p {
+  color: #606060;
+}
+.text-sub {
+  margin-left: 4.5%;
   margin-bottom: -3%;
   text-align: left;
   font-size: 20px;
 }
 
-#searchbar{ 
-  margin-left: 15%; 
-  padding:15px; 
-  border-radius: 10px; 
-} 
+#searchbar {
+  margin-left: 15%;
+  padding: 15px;
+  border-radius: 10px;
+}
 
 .hidden {
   display: none;

@@ -6,193 +6,364 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CookIT</title>
     <link rel="stylesheet" href="browse.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <header>
-        <div>
-          <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
-            <a href="../browse Recipes/browse.html">Browse Recipe</a>
-            <a href="../Purchase ingredients/purch-part2.html">Shop</a>
-            <a href="../Fridge/inventory.html">Inventory</a>
-            <a href="../Login-Register-Profile/Profile.html">Profile</a>
-            <a href="../Login-Register-Profile/login-register.html">Login</a>
-          </div>
-          <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
+      <div>
+        <div id="mySidenav" class="sidenav">
+            <a
+            href="javascript:void(0)"
+            class="closebtns"
+            onclick="toggleNav('mySidenav')"
+            >&times;</a>
+          <a href="../browse Recipes/browse.html">Browse Recipes</a>
+          <a href="../Purchase ingredients/purch-part2.html">Shop</a>
+          <a href="../Fridge/inventory.html">Inventory</a>
+          <a href="../Login-Register-Profile/Profile.html">Profile</a>
+          <a href="../Login-Register-Profile/login-register.html">Login</a>
         </div>
-        <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
-      </header>
+        <span
+          style="font-size: 30px; cursor: pointer"
+          onclick="toggleNav('mySidenav')"
+          >&#9776;</span
+        >
+      </div>
+      <h1 onclick="document.location='../browse Recipes/browse.html'">
+        CookIT
+      </h1>
+    </header>
   </head>
   <body>
-        <div>
-            <img src="./img/fp-fp-6661.jpg" style="position: relative; width: 100vw; height: 50vmin; object-fit: cover;"/>
-            <div style="position: absolute; top: 25%; left: 49%; transform: translateX(-50%); width:100%;" class="search-container">
-                <input type="text" id="searchbar" onkeyup="search_recipe()" name="search" placeholder="Search recipes...">
-            </div>
-            <div style="position: absolute; top: 35%; left: 51%; transform: translateX(-50%);" class="filter-buttons">
-                <button class="time-filter" onclick="openPopup()">Time</button>
-                <button class="cuisine-filter" onclick="openPopupCuisine()">Cuisine</button>
-            </div>
+    <div>
+      <img
+        src="./img/fp-fp-6661.jpg"
+        style="
+          position: relative;
+          width: 100vw;
+          height: 50vmin;
+          object-fit: cover;
+        "
+      />
+      <div
+        style="
+          position: absolute;
+          top: 25%;
+          left: 49%;
+          transform: translateX(-50%);
+          width: 100%;
+        "
+        class="search-container"
+      >
+        <input
+          type="text"
+          id="searchbar"
+          onkeyup="search_recipe()"
+          name="search"
+          placeholder="Search recipes..."
+        />
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 35%;
+          left: 51%;
+          transform: translateX(-50%);
+        "
+        class="filter-buttons"
+      >
+        <button class="time-filter" onclick="openPopup()">Time</button>
+        <button class="cuisine-filter" onclick="openPopupCuisine()">
+          Cuisine
+        </button>
+      </div>
+    </div>
+
+    <div class="popup" id="myPopup">
+      <div class="popup-content">
+        <div class="close-container">
+          <span class="close" onclick="closePopup()">
+            <i class="fa fa-times"></i>
+          </span>
+        </div>
+        <div class="button-container">
+          <button
+            class="time-options"
+            data-filter-type="time"
+            data-filter ="1hr"
+            onclick="filterSelection(event)"
+          >
+            < 1 hr
+          </button>
+
+          <button
+            class="time-options"
+            data-filter-type="time"
+            data-filter="2hr"
+            onclick="filterSelection(event)"
+          >
+            < 2 hrs
+          </button>
+
+          <button
+            class="time-options"
+            data-filter-type="time"
+            data-filter="3hr"
+            onclick="filterSelection(event)"
+          >
+            < 3 hrs
+          </button>
+
+          <button
+            class="time-options"
+            data-filter-type="time"
+            data-filter="4hr"
+            onclick="filterSelection(event)"
+          >
+            < 4 hrs
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="myPopup2">
+      <div class="popup-content">
+        <div class="close-container">
+          <span class="close" onclick="closePopupCuisine()">
+            <i class="fa fa-times"></i>
+          </span>
         </div>
 
-        <div class="popup" id="myPopup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup()">&times;</span>
-                <ul>
-                    <li><button class="time-options" data-filter="1hr" onclick="filterSelection(event)">< 1 hr</button></li>
-                    <li><button class="time-options" data-filter="2hr" onclick="filterSelection(event)">< 2 hrs</button></li>
-                    <li><button class="time-options" data-filter="3hr" onclick="filterSelection(event)">< 3 hrs</button></li>
-                    <li><button class="time-options" data-filter="4hr" onclick="filterSelection(event)">< 4 hrs</button></li>
-                </ul>
-            </div>
-        </div>
-        <div class="popup" id="myPopup2">
-            <div class="popup-content">
-                <span class="close" onclick="closePopupCuisine()">&times;</span>
-                <ul>
-                    <li><button class="time-options" data-filter="American" onclick="filterSelection(event)">American</button></li>
-                    <li><button class="time-options" data-filter="Italian" onclick="filterSelection(event)">Italian</button></li>
-                    <li><button class="time-options" data-filter="Mongolian" onclick="filterSelection(event)">Mongolian</button></li>
-                    <li><button class="time-options" data-filter="Nordic" onclick="filterSelection(event)">Nordic</button></li>
-                </ul>
-            </div>
-        </div>
-        <main>
-            <div class="text-block">
-                <h2>About CookIt</h2>
-                <p>CookIT is a powerful cooking application browsing page that allows users to easily search for their favorite recipes, filter recipes based on various criteria, and discover new and exciting dishes. Whether you're a seasoned chef or just starting out in the kitchen, CookIT is your go-to resource for bringing mouthwatering recipes to life.</p>
+        <div class="button-container">
+          <button
+            class="time-options"
+            data-filter-type="cuisine"
+            data-filter="American"
+            onclick="filterSelection(event)"
+          >
+            American
+          </button>
 
-            </div>
-            <div class="text-sub">
-                <h2>Recommended Recipes (Click for more information)</h2>
-            </div>
+          <button
+            class="time-options"
+            data-filter-type="cuisine"
+            data-filter="Italian"
+            onclick="filterSelection(event)"
+          >
+            Italian
+          </button>
 
-            <div class="recipe-container">
-                <!-- Sample Recipe -->
-                <div class="recipe 1hr 2hr 3hr 4hr Italian" onclick="showRecipeDetails(this); toggleSidebar()">
-                    <img class = "recipe-img" src="./img/fp-fp-2149056043.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Chicken Parm</h2>
-                        <p>Time: 50 minutes</p>
-                        <div class="rating">
-                            <div class="stars1"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe-sidebar" id="recipeSidebar">
-                </div>
-                <div class="recipe 1hr 2hr 3hr 4hr American" onclick="showRecipeDetails2(this); toggleSidebar()">
-                    <img src="./img/loaded-burgers-featured.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Cheeseburger</h2>
-                        <p>Time: 30 minutes</p>
-                        <div class="rating">
-                            <div class="stars2"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 2hr 3hr 4hr Italian" onclick="showRecipeDetails3(this); toggleSidebar()">
-                    <img src="./img/FINAL-lobster-ravioli-1-1200x1800.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Lobster Ravioli</h2>
-                        <p>Time: 1.5 hrs </p>
-                        <div class="rating">
-                            <div class="stars3"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 3hr 4hr Italian" onclick="showRecipeDetails4(this); toggleSidebar()">
-                    <img src="./img/cheese-pizza.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Classic Cheese Pizza</h2>
-                        <p>Time: 3 hrs</p>
-                        <div class="rating">
-                            <div class="stars2"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 4hr Italian American" onclick="showRecipeDetails5(this); toggleSidebar()">
-                    <img src="./img/Lasagna.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Cottage Cheese Lasagna</h2>
-                        <p>Time: 3.5 hrs</p>
-                        <div class="rating">
-                            <div class="stars2"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 3hr 4hr Mongolian" onclick="showRecipeDetails6(this); toggleSidebar()">
-                    <img src="./img/mongolian-beef-5-650x852.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Mongolian Beef</h2>
-                        <p>Time: 3 hrs</p>
-                        <div class="rating">
-                            <div class="stars3"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 1hr 2hr 3hr 4hr Italian" onclick="showRecipeDetails7(this); toggleSidebar()">
-                    <img src="./img/carbonara-horizontal-superJumbo-v2.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Spaghetti Carbonara</h2>
-                        <p>Time: 20 mins</p>
-                        <div class="rating">
-                            <div class="stars2"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 1hr 2hr 3hr 4hr Nordic American" onclick="showRecipeDetails8(this); toggleSidebar()">
-                    <img src="./img/SEA-bravetart-homemade-cinnamon-rolls-recipe-hero-04-df109d751ac34d1e8ee91a2a9e15dd9e.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Easy Cinnamon Rolls</h2>
-                        <p>Time: 25 mins</p>
-                        <div class="rating">
-                            <div class="stars2"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 2hr 3hr 4hr American" onclick="showRecipeDetails9(this); toggleSidebar()">
-                    <img src="./img/hamburgerSteak.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Hamburger Steak with Onions and Gravy</h2>
-                        <p>Time: 1.5 hrs</p>
-                        <div class="rating">
-                            <div class="stars3"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 2hr 3hr 4hr American" onclick="showRecipeDetails10(this); toggleSidebar()">
-                    <img src="./img/brunchCasserole.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Sunday Brunch Casserole</h2>
-                        <p>Time: 2 hrs</p>
-                        <div class="rating">
-                            <div class="stars3"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 1hr 2hr 3hr 4hr" onclick="showRecipeDetails11(this); toggleSidebar()">
-                    <img src="./img/ChickenSalad.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Healthy Chicken Salad</h2>
-                        <p>Time: 35 mins</p>
-                        <div class="rating">
-                            <div class="stars3"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="recipe 3hr 4hr American" onclick="showRecipeDetails12(this); toggleSidebar()">
-                    <img src="./img/chickencasserole.jpg" alt="Recipe Image">
-                    <div class="recipe-details">
-                        <h2>Chicken Casserole</h2>
-                        <p>Time: 3.2 hrs</p>
-                        <div class="rating">
-                            <div class="stars2"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Additional Recipes... -->
+          <button
+            class="time-options"
+            data-filter-type="cuisine"
+            data-filter="Mongolian"
+            onclick="filterSelection(event)"
+          >
+            Mongolian
+          </button>
+
+          <button
+            class="time-options"
+            data-filter-type="cuisine"
+            data-filter="Nordic"
+            onclick="filterSelection(event)"
+          >
+            Nordic
+          </button>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="text-block">
+        <h2>About CookIt</h2>
+        <p>
+          CookIT is a powerful cooking application browsing page that allows
+          users to easily search for their favorite recipes, filter recipes
+          based on various criteria, and discover new and exciting dishes.
+          Whether you're a seasoned chef or just starting out in the kitchen,
+          CookIT is your go-to resource for bringing mouthwatering recipes to
+          life.
+        </p>
+      </div>
+      <div class="text-sub">
+        <h2>Recommended Recipes (Click for more information)</h2>
+      </div>
+
+      <div class="recipe-container">
+        <!-- Sample Recipe -->
+        <div
+          class="recipe 1hr 2hr 3hr 4hr Italian"
+          onclick="showRecipeDetails(this); toggleSidebar()"
+        >
+          <img
+            class="recipe-img"
+            src="./img/fp-fp-2149056043.jpg"
+            alt="Recipe Image"
+          />
+          <div class="recipe-details">
+            <h2>Chicken Parm</h2>
+            <p>Time: 50 minutes</p>
+            <div class="rating">
+              <div class="stars1"></div>
             </div>
-        </main>
-    </body>
-    <script src="browse.js"></script>
+          </div>
+        </div>
+        <div class="recipe-sidebar" id="recipeSidebar"></div>
+        <div
+          class="recipe 1hr 2hr 3hr 4hr American"
+          onclick="showRecipeDetails2(this); toggleSidebar()"
+        >
+          <img src="./img/loaded-burgers-featured.jpg" alt="Recipe Image" />
+          <div class="recipe-details">
+            <h2>Cheeseburger</h2>
+            <p>Time: 30 minutes</p>
+            <div class="rating">
+              <div class="stars2"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 2hr 3hr 4hr Italian"
+          onclick="showRecipeDetails3(this); toggleSidebar()"
+        >
+          <img
+            src="./img/FINAL-lobster-ravioli-1-1200x1800.jpg"
+            alt="Recipe Image"
+          />
+          <div class="recipe-details">
+            <h2>Lobster Ravioli</h2>
+            <p>Time: 1.5 hrs</p>
+            <div class="rating">
+              <div class="stars3"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 3hr 4hr Italian"
+          onclick="showRecipeDetails4(this); toggleSidebar()"
+        >
+          <img src="./img/cheese-pizza.jpg" alt="Recipe Image" />
+          <div class="recipe-details">
+            <h2>Classic Cheese Pizza</h2>
+            <p>Time: 3 hrs</p>
+            <div class="rating">
+              <div class="stars2"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 4hr Italian American"
+          onclick="showRecipeDetails5(this); toggleSidebar()"
+        >
+          <img src="./img/Lasagna.jpg" alt="Recipe Image" />
+          <div class="recipe-details">
+            <h2>Cottage Cheese Lasagna</h2>
+            <p>Time: 3.5 hrs</p>
+            <div class="rating">
+              <div class="stars2"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 3hr 4hr Mongolian"
+          onclick="showRecipeDetails6(this); toggleSidebar()"
+        >
+          <img src="./img/mongolian-beef-5-650x852.jpg" alt="Recipe Image" />
+          <div class="recipe-details">
+            <h2>Mongolian Beef</h2>
+            <p>Time: 3 hrs</p>
+            <div class="rating">
+              <div class="stars3"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 1hr 2hr 3hr 4hr Italian"
+          onclick="showRecipeDetails7(this); toggleSidebar()"
+        >
+          <img
+            src="./img/carbonara-horizontal-superJumbo-v2.jpg"
+            alt="Recipe Image"
+          />
+          <div class="recipe-details">
+            <h2>Spaghetti Carbonara</h2>
+            <p>Time: 20 mins</p>
+            <div class="rating">
+              <div class="stars2"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 1hr 2hr 3hr 4hr Nordic American"
+          onclick="showRecipeDetails8(this); toggleSidebar()"
+        >
+          <img
+            src="./img/SEA-bravetart-homemade-cinnamon-rolls-recipe-hero-04-df109d751ac34d1e8ee91a2a9e15dd9e.jpg"
+            alt="Recipe Image"
+          />
+          <div class="recipe-details">
+            <h2>Easy Cinnamon Rolls</h2>
+            <p>Time: 25 mins</p>
+            <div class="rating">
+              <div class="stars2"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 2hr 3hr 4hr American"
+          onclick="showRecipeDetails9(this); toggleSidebar()"
+        >
+          <img src="./img/hamburgerSteak.jpg" alt="Recipe Image" />
+          <div class="recipe-details">
+            <h2>Hamburger Steak with Onions and Gravy</h2>
+            <p>Time: 1.5 hrs</p>
+            <div class="rating">
+              <div class="stars3"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 2hr 3hr 4hr American"
+          onclick="showRecipeDetails10(this); toggleSidebar()"
+        >
+          <img src="./img/brunchCasserole.jpg" alt="Recipe Image" />
+          <div class="recipe-details">
+            <h2>Sunday Brunch Casserole</h2>
+            <p>Time: 2 hrs</p>
+            <div class="rating">
+              <div class="stars3"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 1hr 2hr 3hr 4hr"
+          onclick="showRecipeDetails11(this); toggleSidebar()"
+        >
+          <img src="./img/ChickenSalad.jpg" alt="Recipe Image" />
+          <div class="recipe-details">
+            <h2>Healthy Chicken Salad</h2>
+            <p>Time: 35 mins</p>
+            <div class="rating">
+              <div class="stars3"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="recipe 3hr 4hr American"
+          onclick="showRecipeDetails12(this); toggleSidebar()"
+        >
+          <img src="./img/chickencasserole.jpg" alt="Recipe Image" />
+          <div class="recipe-details">
+            <h2>Chicken Casserole</h2>
+            <p>Time: 3.2 hrs</p>
+            <div class="rating">
+              <div class="stars2"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Additional Recipes... -->
+      </div>
+    </main>
+  </body>
+  <script src="browse.js"></script>
 </html>

@@ -1,81 +1,158 @@
 <!-- some stylings have been modified from their originals provides by Google and NicePages -->
 
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+<html style="font-size: 16px" lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
     <title>CookIT | Login</title>
-    <link rel="stylesheet" href="loginregister.css" media="screen">
-<link rel="stylesheet" href="Login.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="buttons.js" defer=""></script>
-    <meta name="referrer" content="origin">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": ""
-}</script>
-<script>
-  let navOpen = false;
-  function toggleNav(sidenavId) {
-      const isOpen = (sidenavId === "mySidenav") ? navOpen : fridgenavOpen;
-      const width = isOpen ? "0" : "300px";
+    <link rel="stylesheet" href="loginregister.css" media="screen" />
+    <link rel="stylesheet" href="Login.css" media="screen" />
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="jquery.js"
+      defer=""
+    ></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="buttons.js"
+      defer=""
+    ></script>
+    <meta name="referrer" content="origin" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
 
-      if (sidenavId === "mySidenav") {
-          navOpen = !navOpen;
-      } else if (sidenavId === "fridgeSidenav") {
-          fridgenavOpen = !fridgenavOpen;
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": ""
       }
+    </script>
+    <script>
+      let navOpen = false;
+      function toggleNav(sidenavId) {
+        const isOpen = sidenavId === "mySidenav" ? navOpen : fridgenavOpen;
+        const width = isOpen ? "0" : "300px";
 
-      document.getElementById(sidenavId).style.width = width;
-  }
-</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Login">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-home-page="login-register.html" data-home-page-title="Login" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
+        if (sidenavId === "mySidenav") {
+          navOpen = !navOpen;
+        } else if (sidenavId === "fridgeSidenav") {
+          fridgenavOpen = !fridgenavOpen;
+        }
+
+        document.getElementById(sidenavId).style.width = width;
+      }
+    </script>
+    <meta name="theme-color" content="#478ac9" />
+    <meta property="og:title" content="Login" />
+    <meta property="og:type" content="website" />
+    <meta data-intl-tel-input-cdn-path="intlTelInput/" />
+  </head>
+  <body
+    data-home-page="login-register.html"
+    data-home-page-title="Login"
+    data-path-to-root="./"
+    data-include-products="false"
+    class="u-body u-xl-mode"
+    data-lang="en"
+  >
     <header>
-      <div>
+      <!-- <div>
         <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
-          <a href="../browse Recipes/browse.html">Browse Recipe</a>
+          <a
+            href="javascript:void(0)"
+            class="closebtn"
+            onclick="toggleNav('mySidenav')"
+            >&times;</a
+          >
+          <a href="../browse Recipes/browse.html">Browse Recipes</a>
           <a href="../Purchase ingredients/purch-part2.html">Shop</a>
           <a href="../Fridge/inventory.html">Inventory</a>
-          <!-- <a href="../Login-Register-Profile/Profile.html">Profile</a>
-          <a href="../Login-Register-Profile/login-register.html">Login</a> -->
         </div>
-        <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
-      </div>
-      <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
+        <span
+          style="font-size: 30px; cursor: pointer"
+          onclick="toggleNav('mySidenav')"
+          >&#9776;</span
+        >
+      </div> -->
+      <h1 onclick="document.location='../browse Recipes/browse.html'">
+        CookIT
+      </h1>
     </header>
-    <section style="padding-top: 50px;" class="u-align-left u-clearfix u-section-1" id="sec-92fe">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <div class="u-expanded-width u-tab-links-align-justify u-tabs u-tabs-1">
+    <section
+      style="padding-top: 50px"
+      class="u-align-left u-clearfix u-section-1"
+      id="sec-92fe"
+    >
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 sign-in-wrapper">
+        <div
+          class="u-expanded-width u-tab-links-align-justify u-tabs u-tabs-1 login-container"
+        >
           <ul class="u-spacing-30 u-tab-list u-unstyled" role="tablist">
             <li class="u-tab-item" role="presentation">
-              <a class="active u-active-custom-color-1 u-button-style u-tab-link u-tab-link-1" id="link-tab-081f" href="#tab-081f" role="tab" aria-controls="tab-081f" aria-selected="true">Login</a>
+              <a
+                class="active u-active-custom-color-1 u-button-style u-tab-link u-tab-link-1"
+                id="link-tab-081f"
+                href="#tab-081f"
+                role="tab"
+                aria-controls="tab-081f"
+                aria-selected="true"
+                >Login</a
+              >
             </li>
             <li class="u-tab-item" role="presentation">
-              <a class="u-active-custom-color-1 u-button-style u-tab-link u-tab-link-2" id="link-tab-4d57" href="#tab-4d57" role="tab" aria-controls="tab-4d57" aria-selected="false">Register</a>
+              <a
+                class="u-active-custom-color-1 u-button-style u-tab-link u-tab-link-2"
+                id="link-tab-4d57"
+                href="#tab-4d57"
+                role="tab"
+                aria-controls="tab-4d57"
+                aria-selected="false"
+                >Register</a
+              >
             </li>
           </ul>
           <div class="u-tab-content">
-            <div class="u-container-style u-tab-active u-tab-pane" id="tab-081f" role="tabpanel" aria-labelledby="link-tab-081f">
+            <div
+              class="u-container-style u-tab-active u-tab-pane"
+              id="tab-081f"
+              role="tabpanel"
+              aria-labelledby="link-tab-081f"
+            >
               <div class="u-container-layout u-container-layout-1">
-                <div class="u-carousel u-carousel-duration-250 u-carousel-fade u-expanded-width u-form u-form-1" data-interval="0" data-u-ride="false">
-                  <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px" source="email">
+                <div
+                  class="u-carousel u-carousel-duration-250 u-carousel-fade u-expanded-width u-form u-form-1"
+                  data-interval="0"
+                  data-u-ride="false"
+                >
+                  <form
+                    action="https://forms.nicepagesrv.com/v2/form/process"
+                    class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form"
+                    style="padding: 15px"
+                    source="email"
+                  >
                     <div class="u-form-group u-form-progress u-form-group-1">
                       <div class="u-form-progress-inner">
-                        <div class="u-form-progress-bar" style="width: calc((100% - var(--step-icon-size)) / 1 * 1);"></div>
-                        <div class="done u-form-progress-step"><span class="u-form-progress-icon u-icon"></span>
+                        <div
+                          class="u-form-progress-bar"
+                          style="
+                            width: calc((100% - var(--step-icon-size)) / 1 * 1);
+                          "
+                        ></div>
+                        <div class="done u-form-progress-step">
+                          <span class="u-form-progress-icon u-icon"></span>
                           <span class="u-form-progress-text u-text">Step</span>
                         </div>
-                        <div class="active u-form-progress-step"><span class="u-form-progress-icon u-icon"></span>
+                        <div class="active u-form-progress-step">
+                          <span class="u-form-progress-icon u-icon"></span>
                           <span class="u-form-progress-text u-text">Step</span>
                         </div>
                       </div>
@@ -84,96 +161,278 @@
                       <div class="u-active u-carousel-item u-form-step u-slide">
                         <div class="u-form-group u-form-name u-label-top">
                           <label for="name-558c" class="u-label">Email</label>
-                          <input type="email" placeholder="ben@example.com" id="name-558c" name="email" class="u-input u-input-rectangle" required="">
+                          <input
+                            type="email"
+                            placeholder="ben@example.com"
+                            id="name-558c"
+                            name="email"
+                            class="u-input u-input-rectangle input-text"
+                            required=""
+                          />
                         </div>
                       </div>
                       <div class="u-carousel-item u-form-step u-slide">
                         <div class="u-form-group u-label-top u-form-group-3">
-                          <label for="email-558c" class="u-label">Password</label>
-                          <input type="password" id="email-558c" name="password" class="u-input u-input-rectangle" required="required">
+                          <label for="email-558c" class="u-label"
+                            >Password</label
+                          >
+                          <input
+                            type="password"
+                            id="email-558c"
+                            name="password"
+                            class="u-input u-input-rectangle"
+                            required="required"
+                          />
                         </div>
                       </div>
                     </div>
-                    <div class="u-form-group u-form-submit u-label-top">
-                      <a href="#" class="u-btn u-btn-step u-btn-step-prev u-button-style u-btn-1">Back</a>
-                      <a href="#" class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1">Next</a>
-                      <button class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1 resetPass" onclick="showResetInstructions()">Reset Password</button>
-                      <button onclick="goToLink()" class="u-btn u-btn-submit u-button-style u-btn-1">Submit</button>
-                      <input type="submit" value="submit" class="u-form-control-hidden">
+                    <div
+                      class="u-form-group u-form-submit u-label-top button-containers"
+                    >
+                      <a
+                        href="#"
+                        class="u-btn u-btn-step u-btn-step-prev u-button-style u-btn-1"
+                        >Back</a
+                      >
+                      <a
+                        href="#"
+                        class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1"
+                        >Next</a
+                      >
+                      <button
+                        class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1 resetPass"
+                        onclick="showResetInstructions()"
+                      >
+                        Reset Password
+                      </button>
+                      <button
+                        onclick="goToLink()"
+                        class="u-btn u-btn-submit u-button-style u-btn-1"
+                      >
+                        Submit
+                      </button>
+                      <input
+                        type="submit"
+                        value="submit"
+                        class="u-form-control-hidden"
+                      />
                     </div>
-                    <div class="u-form-send-message u-form-send-success">Logged in!</div>
+                    <div class="u-form-send-message u-form-send-success">
+                      Logged in!
+                    </div>
                     <div class="u-form-send-error u-form-send-message"></div>
-                    <input type="hidden" value="" name="recaptchaResponse">
-                    <input type="hidden" name="formServices" value="e7ce658b-df0e-244f-246c-7b31d0bcc61c">
+                    <input type="hidden" value="" name="recaptchaResponse" />
+                    <input
+                      type="hidden"
+                      name="formServices"
+                      value="e7ce658b-df0e-244f-246c-7b31d0bcc61c"
+                    />
                   </form>
                 </div>
-                <a href="../browse Recipes/browse.html" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-hover-white u-btn-4">Continue Browsing as Guest</a>
+                <a
+                  href="../browse Recipes/browse.html"
+                  class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-hover-white u-btn-4"
+                  >Continue Browsing as Guest</a
+                >
               </div>
             </div>
-            <div class="u-container-style u-tab-pane" id="tab-4d57" role="tabpanel" aria-labelledby="link-tab-4d57">
+            <div
+              class="u-container-style u-tab-pane"
+              id="tab-4d57"
+              role="tabpanel"
+              aria-labelledby="link-tab-4d57"
+            >
               <div class="u-container-layout u-container-layout-2">
-                <div class="custom-expanded u-carousel u-carousel-duration-250 u-carousel-fade u-expanded-width u-form u-form-2" data-interval="0" data-u-ride="false">
-                  <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px" source="email">
-                    <div class="u-carousel-inner" role="listbox">
+                <div
+                  class="custom-expanded u-carousel u-carousel-duration-250 u-carousel-fade u-expanded-width u-form u-form-2"
+                  data-interval="0"
+                  data-u-ride="false"
+                >
+                  <form
+                    action="https://forms.nicepagesrv.com/v2/form/process"
+                    class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form"
+                    style="padding: 15px"
+                    source="email"
+                  >
+                    <div class="u-carousel-inner form-grouping" role="listbox">
                       <div class="u-active u-carousel-item u-form-step u-slide">
                         <div class="u-form-group u-form-name u-label-top">
                           <label for="name-558c" class="u-label">Name</label>
-                          <input type="text" placeholder="Name" id="name-558c" name="name" class="u-input u-input-rectangle" required="">
+                          <input
+                            type="text"
+                            placeholder="Name"
+                            id="name-558c"
+                            name="name"
+                            class="u-input u-input-rectangle input-text"
+                            required=""
+                          />
                         </div>
                         <div class="u-form-email u-form-group u-label-top">
                           <label for="email-558c" class="u-label">Email</label>
-                          <input type="email" placeholder="Email" id="email-558c" name="email" class="u-input u-input-rectangle" required="">
+                          <input
+                            type="email"
+                            placeholder="Email"
+                            id="email-558c"
+                            name="email"
+                            class="u-input u-input-rectangle input-text"
+                            required=""
+                          />
                         </div>
                         <div class="u-form-group u-label-top u-form-group-7">
-                          <label for="text-b787" class="u-label">Create a Password (min 8 characters, mix of uppercase and lowercase, and one number)</label>
-                          <input type="password" placeholder="password" id="text-b787" name="password_new" class="u-input u-input-rectangle" required="required">
+                          <label for="text-b787" class="u-label"
+                            >Create a Password
+                          </label>
+                          <label for="text-b787" class="u-label secondary-text"
+                            >(min 8 characters, mix of uppercase and lowercase,
+                            and one number)</label
+                          >
+                          <input
+                            type="password"
+                            placeholder="password"
+                            id="text-b787"
+                            name="password_new"
+                            class="u-input u-input-rectangle input-text"
+                            required="required"
+                          />
                         </div>
                         <div class="u-form-group u-label-top u-form-group-7">
-                          <label for="text-b787" class="u-label">Confirm Password</label>
-                          <input type="password" placeholder="password" id="text-b787a" name="password_newa" class="u-input u-input-rectangle" required oninput="validatePasswords()">
+                          <label for="text-b787" class="u-label"
+                            >Confirm Password</label
+                          >
+                          <input
+                            type="password"
+                            placeholder="password"
+                            id="text-b787a"
+                            name="password_newa"
+                            class="u-input u-input-rectangle input-text"
+                            required
+                            oninput="validatePasswords()"
+                          />
                         </div>
                       </div>
                       <div class="u-carousel-item u-form-step u-slide">
-                        <div class="u-form-group u-form-phone u-label-top u-form-group-8">
+                        <div
+                          class="u-form-group u-form-phone u-label-top u-form-group-8"
+                        >
                           <label for="phone-2432" class="u-label">Phone</label>
-                          <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-2432" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                          <input
+                            type="tel"
+                            pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})"
+                            placeholder="Enter your phone (e.g. +14155552675)"
+                            id="phone-2432"
+                            name="phone"
+                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                            required=""
+                          />
                         </div>
                         <div class="u-form-group u-label-top u-form-group-9">
                           <label for="name-de44" class="u-label">Street</label>
-                          <input type="text" placeholder="Enter your street" id="name-de44" name="street" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                          <input
+                            type="text"
+                            placeholder="Enter your street"
+                            id="name-de44"
+                            name="street"
+                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white input-text"
+                          />
                         </div>
-                        <div class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-10">
+                        <div
+                          class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-10"
+                        >
                           <label for="name-de44" class="u-label">City</label>
-                          <input type="text" placeholder="Enter your city" id="name-de44" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                          <input
+                            type="text"
+                            placeholder="Enter your city"
+                            id="name-de44"
+                            name="city"
+                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white input-text"
+                          />
                         </div>
-                        <div class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-11">
-                          <label for="name-de44" class="u-label">Postal Code</label>
-                          <input type="text" placeholder="Enter your Postal Code" id="name-de44" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                        <div
+                          class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-11"
+                        >
+                          <label for="name-de44" class="u-label"
+                            >Postal Code</label
+                          >
+                          <input
+                            type="text"
+                            placeholder="Enter your Postal Code"
+                            id="name-de44"
+                            name="city"
+                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white input-text"
+                          />
                         </div>
-                        <div class="u-form-country u-form-group u-label-top u-form-group-12">
-                          <label for="country-de44" class="u-label">Country</label>
+                        <div
+                          class="u-form-country u-form-group u-label-top u-form-group-12"
+                        >
+                          <label for="country-de44" class="u-label"
+                            >Country</label
+                          >
                           <div class="u-form-select-wrapper">
-                            <select id="country-de44" name="country" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></select>
+                            <select
+                              id="country-de44"
+                              name="country"
+                              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                            ></select>
                           </div>
                         </div>
-                        <div class="u-form-agree u-form-group u-label-top u-form-group-13">
+                        <div
+                          class="u-form-agree u-form-group u-label-top u-form-group-13"
+                        >
                           <label class="u-label"></label>
-                          <input type="checkbox" id="agree-884c" name="agree" class="u-agree-checkbox u-field-input" required="">
-                          <label for="agree-884c" class="u-agree-label u-field-label">I accept the <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5" href="#">Terms of Service</a>
+                          <input
+                            type="checkbox"
+                            id="agree-884c"
+                            name="agree"
+                            class="u-agree-checkbox u-field-input"
+                            required=""
+                          />
+                          <label
+                            for="agree-884c"
+                            class="u-agree-label u-field-label"
+                            >I accept the
+                            <a
+                              class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5"
+                              href="#"
+                              >Terms of Service</a
+                            >
                           </label>
                         </div>
                       </div>
                     </div>
                     <div class="u-form-group u-form-submit u-label-top">
-                      <a href="#" class="u-btn u-btn-step u-btn-step-prev u-button-style u-btn-6">Back</a>
-                      <a href="#" class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-6">Next</a>
-                      <a href="#" class="u-btn u-btn-submit u-button-style u-btn-6">Submit</a>
-                      <input type="submit" value="submit" class="u-form-control-hidden">
+                      <a
+                        href="#"
+                        class="u-btn u-btn-step u-btn-step-prev u-button-style u-btn-6"
+                        >Back</a
+                      >
+                      <a
+                        href="#"
+                        class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-6"
+                        >Next</a
+                      >
+                      <a
+                        href="#"
+                        class="u-btn u-btn-submit u-button-style u-btn-6"
+                        >Submit</a
+                      >
+                      <input
+                        type="submit"
+                        value="submit"
+                        class="u-form-control-hidden"
+                      />
                     </div>
-                    <div class="u-form-send-message u-form-send-success">Thank you! Your account has been created.</div>
-                    <div class="u-form-send-error u-form-send-message">Please fix errors then try again.</div>
-                    <input type="hidden" value="" name="recaptchaResponse">
-                    <input type="hidden" name="formServices" value="e7ce658b-df0e-244f-246c-7b31d0bcc61c">
+                    <div class="u-form-send-message u-form-send-success">
+                      Thank you! Your account has been created.
+                    </div>
+                    <div class="u-form-send-error u-form-send-message">
+                      Please fix errors then try again.
+                    </div>
+                    <input type="hidden" value="" name="recaptchaResponse" />
+                    <input
+                      type="hidden"
+                      name="formServices"
+                      value="e7ce658b-df0e-244f-246c-7b31d0bcc61c"
+                    />
                   </form>
                 </div>
               </div>
@@ -185,44 +444,50 @@
     <section class="u-align-center u-clearfix u-section-2" id="sec-89c7">
       <div class="u-clearfix u-sheet u-sheet-1"></div>
     </section>
-    
-<script>
-  function validatePasswords() {
-    var password1 = document.getElementById("text-b787").value;
-    var password2 = document.getElementById("text-b787a").value;
 
-    // Validate length, one uppercase letter, one lowercase letter, and one digit
-    var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    <script>
+      function validatePasswords() {
+        var password1 = document.getElementById("text-b787").value;
+        var password2 = document.getElementById("text-b787a").value;
 
-    if (password1 !== password2) {
-      document.getElementById("text-b787a").setCustomValidity("Passwords do not match");
-    } else if (!regex.test(password1)) {
-      document.getElementById("text-b787").setCustomValidity("Password must be at least 8 characters with one uppercase letter, one lowercase letter, and one digit");
-      document.getElementById("text-b787a").setCustomValidity("");
-    } else {
-      document.getElementById("text-b787").setCustomValidity("");
-      document.getElementById("text-b787a").setCustomValidity("");
-    }
-  }
-</script>
-  
-<script>
-  function showResetInstructions() {
-    var element = document.getElementById("name-558c");
-    var inputValue = element.value.trim(); // Trim removes leading and trailing whitespaces
+        // Validate length, one uppercase letter, one lowercase letter, and one digit
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
-    if (inputValue !== "") {
-      alert("Password reset instructions have been emailed!");
-    } else {
-      alert("Please enter your email before resetting the password.");
-    }
-  }
-</script>
+        if (password1 !== password2) {
+          document
+            .getElementById("text-b787a")
+            .setCustomValidity("Passwords do not match");
+        } else if (!regex.test(password1)) {
+          document
+            .getElementById("text-b787")
+            .setCustomValidity(
+              "Password must be at least 8 characters with one uppercase letter, one lowercase letter, and one digit"
+            );
+          document.getElementById("text-b787a").setCustomValidity("");
+        } else {
+          document.getElementById("text-b787").setCustomValidity("");
+          document.getElementById("text-b787a").setCustomValidity("");
+        }
+      }
+    </script>
 
-<script>
-  function goToLink() {
-    window.location.href = "/browse%20Recipes/browse2.html";
-  }
-</script>
+    <script>
+      function showResetInstructions() {
+        var element = document.getElementById("name-558c");
+        var inputValue = element.value.trim(); // Trim removes leading and trailing whitespaces
 
-</body></html>
+        if (inputValue !== "") {
+          alert("Password reset instructions have been emailed!");
+        } else {
+          alert("Please enter your email before resetting the password.");
+        }
+      }
+    </script>
+
+    <script>
+      function goToLink() {
+        window.location.href = "/browse%20Recipes/browse.html";
+      }
+    </script>
+  </body>
+</html>
